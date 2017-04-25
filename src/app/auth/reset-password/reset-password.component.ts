@@ -40,7 +40,7 @@ export class ResetPasswordComponent implements OnInit {
   }
   
   setMessage(c: AbstractControl): void {
-    debugger;
+    
     this.emailMessage = '';
     if( (c.touched || c.dirty) && c.errors ) {
       
