@@ -1,0 +1,27 @@
+.dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+dash-header {
+    background: #434343;
+
+    flex: 0 0 50px;
+}
+
+main {
+        
+    flex: 1 1 auto;
+    display: flex;
+}
+
+dash-menu {
+    flex: 0 0 54px;
+    background: #434343;
+}
+
+section.content {
+        flex: 1 1 auto;
+    background: white;
+}

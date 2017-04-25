@@ -1,0 +1,7 @@
+<p-dataTable [value]="products" selectionMode="single" [responsive]="true"  (onRowSelect)="onRowSelect($event)">
+    <p-column field="name" header="NAME" [sortable]="true"></p-column>
+    <p-column field="price" header="PRICE" [sortable]="true"></p-column>
+    <p-column field="tag" header="TAG" [sortable]="true"></p-column>
+</p-dataTable> 
+
+
