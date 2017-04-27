@@ -26,6 +26,10 @@ export class AuthService {
     return !!this.currentUser;
   }
 
+  logoutUser(): void {
+    this.currentUser = null;
+  }
+
 
 
 }

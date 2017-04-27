@@ -1,4 +1,38 @@
+<div class="logoWrapper">
+  <img src="assets/logo.png" alt="">
+</div>
+<div class="userBlock">
+  <span class="avatar">
+    <img src="assets/messi.jpg" alt="">
+  </span>
+  <span class="username">Lionel Messi</span>
+</div>
 <nav>
-  <ul><li><a [routerLink]="['products']">Products</a></li>
+  
+  <ul>
+      <li *ngFor="let item of DashboardService.menuConf">
+
+        <a [routerLink]="item.link" *ngIf="!item.subNav.length" >
+            <div class="linkBlock">
+              <i class="fa" [ngClass]="'fa-'+item.icon"></i>
+              <span class="text">{{item.title}} </span>
+            </div> 
+          </a>
+
+          <a (click)="toggleSubnavAndMakeActive()" *ngIf="item.subNav.length" [ngClass]="{ active: isActive }">
+            <div class="linkBlock">
+              <i class="fa" [ngClass]="'fa-'+item.icon"></i>
+              <span class="text">{{item.title}} </span>
+            </div> 
+            <i class="fa fa-chevron-right anchor-right" *ngIf="item.subNav.length" aria-hidden="true"></i>
+          </a>
+          
+          <ul class="subnav" [ngClass]="{open : isOpen}" *ngIf="item.subNav.length">
+              <li *ngFor="let subItem of item.subNav">
+                <a [routerLink]="subItem.link">{{subItem.title}}</a>
+              </li>
+          </ul>
+      </li>
   </ul>
+
 </nav>

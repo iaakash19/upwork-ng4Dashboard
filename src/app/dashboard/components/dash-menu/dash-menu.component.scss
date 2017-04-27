@@ -1,0 +1,102 @@
+:host {
+    flex: 0 0 56px;
+    background: #434343;
+    transition: flex 0.3s ease;
+    width: 56px;
+}
+
+:host(.expanded) {
+    flex: 0 0 260px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #b4bfda;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #979797;
+    text-transform: capitalize;
+}
+
+.linkBlock {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    & > i {
+        width: 25px;
+        height: 25px;
+        margin-right: 20px;
+        &:before {
+            font-size: 25px;
+        }
+    }
+}
+
+.logoWrapper {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #434343;
+    display: flex;
+    padding-left: 19px;
+    align-items: center;
+    color: white;
+}
+
+.userBlock {
+        width: 100%;
+    height: 75px;
+       border-bottom: 1px solid #434343;
+}
+
+.subnav {
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    a {
+        padding-left: 100px;
+    }
+    &.open {
+        height: auto;
+        max-height: 20em;
+    }
+}
+i.anchor-right {
+    transition: transform 0.3s ease;
+}
+a.active {
+& i.fa-chevron-right {
+   transform: rotate(90deg);
+    transform-origin: center;
+}
+ 
+}
+
+
+.userBlock {
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    .avatar {
+        width: 40px;
+        height: 40px;
+        flex: 0 0 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+        & img {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .username {
+        color: white;
+    }
+}

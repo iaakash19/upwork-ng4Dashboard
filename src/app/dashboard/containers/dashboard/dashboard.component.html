@@ -1,8 +1,10 @@
 <section class="dashboard-wrapper">
-  <dash-header></dash-header>
 
+  <dash-menu [ngClass]="{expanded: DashboardService.isMenuExpanded}">
+
+  </dash-menu>
   <main>
-    <dash-menu></dash-menu>
+    <dash-header></dash-header>
     <section class="content">
       <div class="container">
         <router-outlet></router-outlet>

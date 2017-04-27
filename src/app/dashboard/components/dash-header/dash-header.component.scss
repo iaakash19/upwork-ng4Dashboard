@@ -1,0 +1,30 @@
+:host {
+    height: 50px;
+    background: #434343;
+    display: flex;
+    padding-right: 2rem;
+    flex: 0 0 50px;
+}
+
+.menu-toggle {
+        display: flex;
+    align-items: center;
+    i:before {
+        color:#b4bfda;
+        font-size: 25px;
+    }
+}
+
+.dashboard-controls {
+margin-left: auto;
+    display: flex;
+    align-items: center;
+    width: 80px;
+    justify-content: space-between;
+    i {
+        &:before {
+          color:#b4bfda;
+        font-size: 25px;  
+        }
+    }
+}

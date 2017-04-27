@@ -1,1 +1,92 @@
-<p-editor [(ngModel)]="product.desc" [style]="{'height':'320px'}"></p-editor>
+<div class="errorMsgBox" *ngIf="!productForm.valid">
+    <p *ngIf="productNameMessage"> {{productNameMessage}} </p>
+    <p *ngIf="productUrlMessage"> {{productUrlMessage}} </p>
+</div>
+
+
+<form [formGroup]="productForm" (submit)="onFormSubmit()">
+    
+    <section class="inputWrapper">
+    <div class="form-group" [ngClass]="{'has-error': productNameMessage}">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" [ngModel]="product.name" (blur)="checkProductName()">
+    </div>
+
+    <div class="form-group">
+        <label for="id">Code</label>
+        <input type="text" formControlName="id" [ngModel]="product.id">
+    </div>
+
+    <div class="form-group">
+        <label for="type">Type</label>
+        <p-dropdown [options]="cities" formControlName="tag" [(ngModel)]="product.tag" [filter]="true"></p-dropdown>
+    </div>
+
+     <div class="form-group inline-me">
+         <input id="active" type="checkbox" [ngModel]="product.active" formControlName="active">
+        <label for="active">Active</label>
+    </div>
+    </section>
+    
+
+    <section class="tabBox">
+        <p-tabView>
+            <p-tabPanel header="Description">
+                <div class="inputWrapper">
+                   <div class="form-group" [ngClass]="{'has-error': productUrlMessage}">
+                        <label for="name">Url</label>
+                        <input type="text" formControlName="url" [ngModel]="product.url" (blur)="checkProductUrl()">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Video Url</label>
+                        <input type="text" formControlName="v_url" [ngModel]="product.v_url">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Price Description</label>
+                        <input type="number" formControlName="price" [ngModel]="product.price">
+                    </div>
+                    </div>
+                    <div class="form_group">
+                        <label for="">Description</label>
+                        <p-editor [(ngModel)]="product.desc" [style]="{'height':'320px'}" formControlName="desc"></p-editor>
+                    </div>
+                    
+            </p-tabPanel>
+            <p-tabPanel header="Attributes">
+                <div (click)="addAttrRow()"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+
+                <div class="label_header">
+                    <div>Label</div>
+                    <div>Value</div>
+                </div>
+                <div class="attrs_block" formArrayName="attrs" *ngFor="let attr of attrs.controls; let i = index;">
+                    
+                    <div class="form_group_wrapper" [formGroupName]="i">
+                        <div class="form_group">
+                            <p-dropdown [options]="labels" formControlName="label" [filter]="true"></p-dropdown>
+                        </div>
+                        <div class="form_group">
+                            <input type="text" formControlName="value">
+                        </div>
+                        <a (click)="removeAttrRow(i)"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                
+
+            </p-tabPanel>
+    <p-tabPanel header="Linked Products">
+        Sample Content Goes HERE    
+    </p-tabPanel>
+</p-tabView>
+    </section>
+
+    <div class="buttonWrapper">
+        <button class="cancel" routerLink="/dashboard/products">Cancel</button>
+        <button class="save" type="submit" [disabled]="!productForm.valid" >Save</button>
+    </div>
+    
+</form>
+
+<!--<pre> {{ productForm.value | json }} </pre>-->

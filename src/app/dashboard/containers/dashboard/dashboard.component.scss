@@ -1,27 +1,56 @@
 .dashboard-wrapper {
     display: flex;
-    flex-direction: column;
     height: 100vh;
 }
 
 dash-header {
     background: #434343;
 
-    flex: 0 0 50px;
+   
 }
 
 main {
         
     flex: 1 1 auto;
     display: flex;
+    flex-direction: column;
 }
 
-dash-menu {
-    flex: 0 0 54px;
-    background: #434343;
-}
+
 
 section.content {
         flex: 1 1 auto;
     background: white;
+     & .container {
+         padding: 20px 10px;
+     }
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+tr {
+        border: 1px solid #d6d6d6;
+    background: #ffffff;
+    color: #555555;
+}
+
+th {
+    display: table-cell;
+        border-color: inherit;
+    box-sizing: border-box;
+    padding: .25em .5em;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+}
+
+tbody {
+    border: 1px solid #D5D5D5;
+    background: #ffffff;
+    color: #222222;
 }

@@ -1,0 +1,118 @@
+input {
+        padding: 0px 12px;
+    height: 28px;
+    font-size: 12px;
+    border-radius: 0px !important;
+    border: 1px solid #cfcfcf;
+    color: #37474f;
+    height: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+        flex: 1 1 33%;
+    
+    &:not(:nth-last-of-type(1)) {
+            margin-right: 1em;
+    }
+    &.inline-me {
+         flex-direction: row;
+         align-items: center;
+    }
+}
+
+.form-group {
+    &.has-error {
+        input {
+            border-color: red;
+        }
+        label {
+            color: red;
+        }
+    }
+}
+
+label {
+        margin-bottom: 4px;
+    color: #37474f;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.tabBox {
+    margin: 1em 0;
+}
+
+.label_header {
+    display: flex;
+    background: #f6f7f9;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+   & > div {
+    flex: 1 1 50%;
+   }
+}
+
+.form_group_wrapper {
+    margin-bottom: 1.5rem;
+    display: flex;
+    & > div {
+        flex: 1 1 48%;
+        margin-right: 1em;
+        input {
+            width: 100%;
+        }
+    }
+}
+.buttonWrapper {
+    display: flex;
+    justify-content: flex-end;
+    & > button {
+        font-size: 1.05rem;
+    padding: 0.5rem 1em;
+    cursor: pointer;
+    }
+}
+    
+button.cancel {
+    color: #333;
+    background-color: #fcfcfc;
+    border: 1px solid #ddd;
+    margin-right: 15px;
+
+}
+button.save {
+    background: #008bf3;
+    border: 1px solid #008bf3;
+    transition: background 0.3s ease;
+    color: white;
+    
+    &:disabled {
+       opacity: 0.5;
+       pointer-events: none;
+       background: #cfcfcf;
+       border-color:  #cfcfcf;
+    }
+}
+.errorMsgBox {
+    border: 1px solid #e0e0e0;
+    max-width: 300px;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid red;
+    p {
+        margin: 0;
+        color: red;
+        &:first-child{
+            margin-bottom: 1rem;
+        }
+    }
+}

@@ -25,30 +25,82 @@
   "products": [
     {
       "id": 101,
+      "active": true,
       "name": "iMac 5k Retina",
-      "price": "$700.00",
+      "price": 700,
       "tag" : "iMac",
+      "url" : "http://google.com",
+      "v_url": "http://google.com",
+       "attrs": [
+        {
+          "label" : "Label 1",
+          "value" : "Value 1"
+        },
+        {
+          "label" : "Label 2",
+          "value" : "Value 2"
+        }
+      ],
       "desc": "And that commitment continues with the all-new 21.5-inch iMac with Retina 4K display. Like the revolutionary 27-inch 5K model"
     },
     {
       "id": 401,
+      "active": false,
       "name": "MacBookPro",
-      "price": "$600.00",
+      "price":600.00,
       "tag" : "Pro",
+       "url" : "http://google.com",
+      "v_url": "http://google.com",
+       "attrs": [
+        {
+          "label" : "Label 1",
+          "value" : "Value 1"
+        },
+        {
+          "label" : "Label 2",
+          "value" : "Value 2"
+        }
+      ],
       "desc": "MacBook Pro with the revolutionary Touch Bar is available in 13-inch and 15-inch models."
     },
     {
       "id": 4121,
+      "active": false,
       "name": "MacBookAir",
-      "price": "$300.00",
+      "price": 300.00,
       "tag" : "Air",
-      "desc": "MacBook Air is powered by 5th generation Intel Core i5 and i7 processors. ... The 11-inch MacBook "
+       "url" : "http://google.com",
+      "v_url": "http://google.com",
+      "desc": "MacBook Air is powered by 5th generation Intel Core i5 and i7 processors. ... The 11-inch MacBook ",
+      "attrs": [
+        {
+          "label" : "Label 1",
+          "value" : "Value 1"
+        },
+        {
+          "label" : "Label 2",
+          "value" : "Value 2"
+        }
+      ]
     },
     {
       "id": 121,
       "name": "iPhone",
-      "price": "$550.00",
+      "active": true,
+      "price": 550.00,
       "tag" : "Phone",
+       "url" : "http://google.com",
+      "v_url": "http://google.com",
+       "attrs": [
+        {
+          "label" : "Label 1",
+          "value" : "Value 1"
+        },
+        {
+          "label" : "Label 2",
+          "value" : "Value 2"
+        }
+      ],
       "desc": "O2 Refresh. A better way to pay monthly and get your hands on the latest iPhone. ..."
     }
   ]

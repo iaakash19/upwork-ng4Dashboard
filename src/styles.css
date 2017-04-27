@@ -19,3 +19,82 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+
+
+tr {
+        border: 1px solid #d6d6d6;
+    background: #ffffff;
+    color: #555555;
+}
+
+th {
+    display: table-cell;
+        border-color: inherit;
+    box-sizing: border-box;
+    padding: .25em .5em;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+}
+
+tbody {
+    border: 1px solid #D5D5D5;
+    background: #ffffff;
+    color: #222222;
+}
+
+td {
+        border-color: inherit;
+    box-sizing: border-box;
+    padding: .25em .5em;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+}
+
+td > .ui-column-title {
+    display: none;
+}
+
+
+.ui-dropdown {
+    width: 100% !important;
+}
+
+.ui-tabview-nav {
+    background: #d7e2e9 !important;
+    padding: 0 !important;
+}
+.ui-tabview-panel {
+    border: 1px solid #cfcfcf !important;
+}
+
+i {
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+}
+
+
+.ui-dropdown label.ui-dropdown-label {
+    cursor: pointer !important;
+    font-size: 0.75rem !important;
+    padding: 0.5rem !important;
+    border-radius: 0 !important;
+}
+
+input:disabled {
+        cursor: not-allowed;
+    opacity: 0.5;
+}

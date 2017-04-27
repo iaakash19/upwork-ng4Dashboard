@@ -13,6 +13,7 @@ import 'rxjs/add/operator/debounceTime';
 export class LoginComponent implements OnInit {
   
   loginForm: FormGroup;
+  
   usernameMessage: string;
   passwordMessage: string;
   loginFailed: string;

@@ -19,8 +19,11 @@ export class ProductsService{
     }
 
     updateProduct(product) {
+        debugger;
          return this.HTTP
             .put(`http://localhost:3000/products/${product.id}`, product)
-            .map((res: Response) => res.json())
+            .map((res: Response) => {
+                debugger; 
+            })
     }
 }
