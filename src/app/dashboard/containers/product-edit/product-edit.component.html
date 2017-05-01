@@ -55,23 +55,29 @@
                     
             </p-tabPanel>
             <p-tabPanel header="Attributes">
-                <div (click)="addAttrRow()"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                
+                
 
                 <div class="label_header">
                     <div>Label</div>
                     <div>Value</div>
                 </div>
-                <div class="attrs_block" formArrayName="attrs" *ngFor="let attr of attrs.controls; let i = index;">
+                <div class="attrs_block" formArrayName="attrs" *ngFor="let attr of attrs.controls; let i = index; let last = last">
                     
-                    <div class="form_group_wrapper" [formGroupName]="i">
+                    <div class="form_group_wrapper" [formGroupName]="i" #inputRow>
                         <div class="form_group">
                             <p-dropdown [options]="labels" formControlName="label" [filter]="true"></p-dropdown>
                         </div>
                         <div class="form_group">
                             <input type="text" formControlName="value">
                         </div>
-                        <a (click)="removeAttrRow(i)"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+                        <div class="action_buttons">
+                            <a (click)="removeAttrRow(i)"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+                            <div *ngIf="last"  (click)="addAttrRow(i)"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                        </div>
+                        
                     </div>
+
                 </div>
                 
 

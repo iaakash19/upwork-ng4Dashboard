@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormArray, Validators, AbstractControl } from '@angular/forms';
 import { ProductsService } from './../products/services/products.service';
@@ -10,7 +10,7 @@ import 'rxjs/add/operator/debounceTime';
   templateUrl: './product-edit.component.html',
   styleUrls: ['./product-edit.component.scss']
 })
-export class ProductEditComponent implements OnInit {
+export class ProductEditComponent implements OnInit  {
   
   product;
   productForm: FormGroup;
@@ -19,6 +19,13 @@ export class ProductEditComponent implements OnInit {
   
   productNameMessage: string;
   productUrlMessage: string;
+  
+  // @ViewChild('inputRow') IR: ElementRef;
+  
+  // ngAfterViewInit() {
+  //   console.log(this.IR.nativeElement);
+  //   this.IR.nativeElement.insertAdjacentHTML('beforeend', '<div class="two">two</div>');
+  // }
 
   private validationMessages = {
     required: 'is Required',
@@ -129,7 +136,7 @@ checkProductName() {
     }
   
 
-  addAttrRow() {
+  addAttrRow(i) {
     this.attrs.push( this.buildAttr() );
   }
 

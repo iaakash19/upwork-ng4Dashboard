@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from './../../dashboard.service';
 import { AuthService } from './../../../auth/auth.service';
+import { ScreenService } from '../../screen.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,11 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./dash-header.component.scss']
 })
 export class DashHeaderComponent implements OnInit {
+  
+  isSecBarVisible = false;
 
   constructor(
     private DashboardService: DashboardService,
     private AuthService: AuthService,
-    private Router: Router
+    private Router: Router,
+    private ScreenService: ScreenService
   ) { }
 
   ngOnInit() {
@@ -26,6 +30,10 @@ export class DashHeaderComponent implements OnInit {
   triggerLogout() {
     this.AuthService.logoutUser();
     this.Router.navigate(['/login']);
+  }
+
+  togglePrimeNav() {
+    this.DashboardService.isMenuVisible = !this.DashboardService.isMenuVisible;
   }
 
 }

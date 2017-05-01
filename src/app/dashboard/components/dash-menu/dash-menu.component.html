@@ -1,4 +1,4 @@
-<div class="logoWrapper">
+<div class="logoWrapper" *ngIf="ScreenService.isLarge()">
   <img src="assets/logo.png" alt="">
 </div>
 <div class="userBlock">
@@ -12,7 +12,7 @@
   <ul>
       <li *ngFor="let item of DashboardService.menuConf">
 
-        <a [routerLink]="item.link" *ngIf="!item.subNav.length" >
+        <a [routerLink]="item.link" *ngIf="!item.subNav.length" routerLinkActive="active" >
             <div class="linkBlock">
               <i class="fa" [ngClass]="'fa-'+item.icon"></i>
               <span class="text">{{item.title}} </span>

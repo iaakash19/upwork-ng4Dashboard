@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../dashboard.service';
+import { ScreenService } from '../../screen.service';
 
 
 
@@ -15,7 +16,8 @@ export class DashMenuComponent implements OnInit {
   isActive = false;
 
   constructor(
-    private DashboardService: DashboardService
+    private DashboardService: DashboardService,
+    private ScreenService: ScreenService
   ) { }
 
   ngOnInit() {

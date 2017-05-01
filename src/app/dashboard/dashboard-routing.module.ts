@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, CanActivate } from '@angular/router';
 import { DashboardComponent } from './containers/dashboard/dashboard.component';
 import { ProductsComponent } from './containers/products/products.component';
+import { HomeComponent } from './containers/home/home.component';
 
 import { AuthGuardService } from './../auth/auth-guard.service';
 
@@ -36,8 +37,10 @@ const ROUTES = [
                 resolve: { product: ProductResolver }
               }
             ]
-            
-            
+          },
+          {
+            path: 'home',
+            component: HomeComponent
           }
         ]
       }

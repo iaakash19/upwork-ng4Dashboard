@@ -82,7 +82,7 @@ export class LoginComponent implements OnInit {
       if(this.authService.redirectUrl) {
         this.router.navigateByUrl(this.authService.redirectUrl);
       }else {
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard/home']);
       }
     }
     else {

@@ -1,6 +1,10 @@
 .dashboard-wrapper {
     display: flex;
     height: 100vh;
+    flex-direction: column;
+    @media all and (min-width: 768px) {
+       flex-direction: row; 
+    }
 }
 
 dash-header {

@@ -8,16 +8,22 @@ import { DashboardComponent } from './containers/dashboard/dashboard.component';
 import { DashHeaderComponent } from './components/dash-header/dash-header.component';
 import { DashMenuComponent } from './components/dash-menu/dash-menu.component';
 import { ProductsComponent } from './containers/products/products.component';
+import { HomeComponent } from './containers/home/home.component';
 
 import { ProductsService } from './containers/products/services/products.service';
 import { ProductsResolver } from './containers/products/services/products-resolver.service';
 import { ProductResolver } from './containers/products/services/product-resolver.service';
 
 import { DashboardService } from './dashboard.service';
+import { ScreenService } from './screen.service';
 
-import {DataTableModule,SharedModule, EditorModule, DropdownModule, TabViewModule} from 'primeng/primeng';
+import { ScreenBelowLarge } from './directives/screen-below-large.directive';
+import { ScreenLarge } from './directives/screen-large.directive';
+
+import {DataTableModule,SharedModule, EditorModule, DropdownModule, TabViewModule, GMapModule} from 'primeng/primeng';
 import { ProductEditComponent } from './containers/product-edit/product-edit.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -31,14 +37,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    TabViewModule
+    TabViewModule,
+    GMapModule
   ],
-  declarations: [DashboardComponent, DashHeaderComponent, DashMenuComponent, ProductsComponent, ProductEditComponent],
+  declarations: [DashboardComponent, DashHeaderComponent, DashMenuComponent, ProductsComponent, ProductEditComponent, ScreenBelowLarge, ScreenLarge, HomeComponent],
   providers: [
     ProductsService,
     ProductsResolver,
     ProductResolver,
-    DashboardService
+    DashboardService,
+    ScreenService
   ]
 })
 export class DashboardModule { }

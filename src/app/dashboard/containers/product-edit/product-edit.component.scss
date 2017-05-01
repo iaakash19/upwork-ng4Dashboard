@@ -11,16 +11,24 @@ input {
 .form-group {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+    @media all and (min-width: 768px) {
+       
         flex: 1 1 33%;
-    
-    &:not(:nth-last-of-type(1)) {
+        width: auto;
+        &:not(:nth-last-of-type(1)) {
             margin-right: 1em;
+        }
     }
+    
     &.inline-me {
          flex-direction: row;
          align-items: center;
     }
 }
+
+
 
 .form-group {
     &.has-error {
@@ -42,8 +50,13 @@ label {
 
 .inputWrapper {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    
     margin-bottom: 1rem;
+      @media all and (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+      }
 }
 
 .tabBox {
@@ -63,7 +76,7 @@ label {
 .form_group_wrapper {
     margin-bottom: 1.5rem;
     display: flex;
-    & > div {
+    & > div:not(:last-of-type) {
         flex: 1 1 48%;
         margin-right: 1em;
         input {
@@ -73,7 +86,10 @@ label {
 }
 .buttonWrapper {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    @media all and (min-width: 768px) {
+       justify-content: flex-end; 
+    }
     & > button {
         font-size: 1.05rem;
     padding: 0.5rem 1em;
@@ -115,4 +131,11 @@ button.save {
             margin-bottom: 1rem;
         }
     }
+}
+
+.action_buttons {
+        flex: 0 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

@@ -1,8 +1,13 @@
 :host {
-    flex: 0 0 56px;
+    
     background: #434343;
     transition: flex 0.3s ease;
-    width: 56px;
+    
+    padding-top: 10px;
+    @media all and (min-width: 768px) {
+        flex: 0 0 56px;
+width: 56px;
+    }
 }
 
 :host(.expanded) {
@@ -51,7 +56,7 @@ a {
 
 .userBlock {
         width: 100%;
-    height: 75px;
+    // height: 75px;
        border-bottom: 1px solid #434343;
 }
 

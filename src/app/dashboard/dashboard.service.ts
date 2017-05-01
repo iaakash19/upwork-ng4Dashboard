@@ -5,13 +5,14 @@ export class DashboardService {
     
     constructor() { }
 
-    isMenuExpanded: boolean = true;
-
+    isMenuExpanded: boolean = false;
+    isMenuVisible: boolean = false;
+    
     get menuConf() {
         return [
             {
                 title: 'dashboard',
-                link: 'dashboard',
+                link: 'home',
                 icon: 'dashboard',
                 subNav: []
             },
