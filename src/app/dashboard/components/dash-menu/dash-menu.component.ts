@@ -16,8 +16,8 @@ export class DashMenuComponent implements OnInit {
   isActive = false;
 
   constructor(
-    private DashboardService: DashboardService,
-    private ScreenService: ScreenService
+    public DashboardService: DashboardService,
+    public ScreenService: ScreenService
   ) { }
 
   ngOnInit() {

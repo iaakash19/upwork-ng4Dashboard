@@ -17,7 +17,7 @@ import { ProductEditComponent } from './containers/product-edit/product-edit.com
 const ROUTES = [
   {
     path: 'dashboard',
-    // canActivate: [AuthGuardService],
+    //canActivate: [AuthGuardService],
     children: [ 
       {
         path: '',

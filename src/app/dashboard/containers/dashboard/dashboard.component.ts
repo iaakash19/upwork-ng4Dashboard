@@ -9,12 +9,23 @@ import { ScreenService } from '../../screen.service';
 })
 export class DashboardComponent implements OnInit {
   
+  isMenuExpanded: boolean;
+  isMenuVisible: boolean;
+
   constructor(
-    private DashboardService: DashboardService,
-    private ScreenService: ScreenService
-  ) { }
+    public DashboardService: DashboardService,
+    public ScreenService: ScreenService
+  ) { 
+      this.isMenuExpanded = this.DashboardService.isMenuExpanded;
+      this.isMenuVisible = this.DashboardService.isMenuVisible;
+  }
+  
+
 
   ngOnInit() {
+    
+
+
       // this.ScreenService.resize$
       //     .subscribe( () => {
       //         if(this.ScreenService.screenWidth > this.ScreenService.largeBreakpoint) {

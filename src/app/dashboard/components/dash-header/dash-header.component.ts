@@ -14,10 +14,10 @@ export class DashHeaderComponent implements OnInit {
   isSecBarVisible = false;
 
   constructor(
-    private DashboardService: DashboardService,
-    private AuthService: AuthService,
-    private Router: Router,
-    private ScreenService: ScreenService
+    public DashboardService: DashboardService,
+    public AuthService: AuthService,
+    public Router: Router,
+    public ScreenService: ScreenService
   ) { }
 
   ngOnInit() {
