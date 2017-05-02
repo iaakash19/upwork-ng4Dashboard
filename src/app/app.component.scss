@@ -1,0 +1,28 @@
+@import './shared/styles/__vars';
+
+i:before {
+    color: $color-icon;
+}
+h3 {
+    background:$bg-pageHeader;
+}
+
+button.save {
+     background: $bg-button;
+    border: 1px solid $bg-button;
+}
+
+.errorMsgBox {
+    border-left: 4px solid $color-error;
+    p {
+        color: $color-error;
+    }
+}
+.ui-tabview.ui-tabview-top>.ui-tabview-nav li.ui-tabview-selected a {
+    border-left: 3px solid $bg-button;
+    color: $bg-button;
+    @media all and (min-width: 768px) {
+         border-left: none;
+        border-top: 3px solid $bg-button;
+    }
+}

@@ -1,6 +1,8 @@
+@import '../../../shared/styles/__vars';
+
 :host {
     
-    background: #434343;
+    background: $bg-menu;
     transition: flex 0.3s ease;
     
     padding-top: 10px;

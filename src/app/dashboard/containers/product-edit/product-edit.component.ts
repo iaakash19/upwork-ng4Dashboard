@@ -47,7 +47,7 @@ export class ProductEditComponent implements OnInit  {
     
     this.productForm = this.fb.group({
       name : ['', Validators.required],
-      id: [{value: '', disabled: false}],
+      id: [{value: '', disabled: true}],
       tag: '',
       active: '',
       url: ['', Validators.required],
@@ -67,6 +67,8 @@ export class ProductEditComponent implements OnInit  {
       price: this.product.price,
       desc: this.product.desc
     })
+  
+   //this.productForm.setControl('attrs', this.fb.array(this.product.attrs || []));
 
      const name = this.productForm.get('name');
      name.valueChanges.debounceTime(1000).subscribe(value => {
@@ -158,7 +160,9 @@ checkProductName() {
 
   onFormSubmit(){
     console.log(this.productForm.value);
-    this.ProductsService.updateProduct(this.productForm.value);
+    let productToUpdate = Object.assign({}, this.product, this.productForm.value);
+
+    this.ProductsService.updateProduct(productToUpdate);
   }
 
 }

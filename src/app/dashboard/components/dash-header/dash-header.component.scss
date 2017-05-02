@@ -1,6 +1,9 @@
+@import '../../../shared/styles/__vars';
+
 :host {
     // height: 50px;
-    background: #434343;
+    //background: #434343;
+    background: $bg-header;
     // display: flex;
     padding-right: 1rem;
     padding-left: 1rem;
@@ -8,7 +11,7 @@
 }
 
 .menu-toggle {
-        display: flex;
+    display: flex;
     align-items: center;
 }
 
@@ -45,10 +48,6 @@
     }
 }
 
-// .dashboard-controls {
-
-// }
- 
 .largeScreenWrapper {
         display: flex;
     align-items: center;
