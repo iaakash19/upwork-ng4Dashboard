@@ -50,7 +50,12 @@
                     </div>
                     <div class="form_group">
                         <label for="">Description</label>
-                        <p-editor [(ngModel)]="product.desc" [style]="{'height':'320px'}" formControlName="desc"></p-editor>
+                         <ckeditor
+    [(ngModel)]="product.desc"
+    formControlName="desc"
+    debounce="500">
+  </ckeditor>
+                        <!--<p-editor [(ngModel)]="product.desc" [style]="{'height':'320px'}" formControlName="desc"></p-editor>-->
                     </div>
                     
             </p-tabPanel>
@@ -72,8 +77,8 @@
                             <input type="text" formControlName="value">
                         </div>
                         <div class="action_buttons">
-                            <a (click)="removeAttrRow(i)"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
-                            <div *ngIf="last"  (click)="addAttrRow(i)"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                            <a (click)="removeAttrRow(i)"><i class="custom-icon delete-icon"></i></a>
+                            <div *ngIf="last"  (click)="addAttrRow(i)"><i class="custom-icon add-icon"></i></div>
                         </div>
                         
                     </div>

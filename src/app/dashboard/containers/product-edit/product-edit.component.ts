@@ -57,6 +57,17 @@ export class ProductEditComponent implements OnInit  {
       attrs: this.fb.array(this.buildAttrs())
     });
 
+    this.productForm.patchValue({
+      name: this.product.name,
+      id: this.product.id,
+      tag: this.product.tag,
+      active: this.product.active,
+      url: this.product.url,
+      v_url: this.product.v_url,
+      price: this.product.price,
+      desc: this.product.desc
+    })
+
      const name = this.productForm.get('name');
      name.valueChanges.debounceTime(1000).subscribe(value => {
       // this.checkErrors(name, 'name');

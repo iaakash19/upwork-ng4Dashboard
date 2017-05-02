@@ -10,21 +10,21 @@
 <nav>
   
   <ul>
-      <li *ngFor="let item of DashboardService.menuConf">
+      <li *ngFor="let item of DashboardService.menuConf" [routerLink]="true">
 
-        <a [routerLink]="item.link" *ngIf="!item.subNav.length" routerLinkActive="active" >
+        <a [routerLink]="item.link" *ngIf="!item.subNav.length">
             <div class="linkBlock">
-              <i class="fa" [ngClass]="'fa-'+item.icon"></i>
+              <i class="fa" [ngClass]="'icon-'+item.icon"></i>
               <span class="text">{{item.title}} </span>
             </div> 
           </a>
 
           <a (click)="toggleSubnavAndMakeActive()" *ngIf="item.subNav.length" [ngClass]="{ active: isActive }">
             <div class="linkBlock">
-              <i class="fa" [ngClass]="'fa-'+item.icon"></i>
+              <i class="fa" [ngClass]="'icon-'+item.icon"></i>
               <span class="text">{{item.title}} </span>
             </div> 
-            <i class="fa fa-chevron-right anchor-right" *ngIf="item.subNav.length" aria-hidden="true"></i>
+            <i class="icon-anchor-right" *ngIf="item.subNav.length" aria-hidden="true"></i>
           </a>
           
           <ul class="subnav" [ngClass]="{open : isOpen}" *ngIf="item.subNav.length">

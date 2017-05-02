@@ -20,10 +20,10 @@ import { ScreenService } from './screen.service';
 import { ScreenBelowLarge } from './directives/screen-below-large.directive';
 import { ScreenLarge } from './directives/screen-large.directive';
 
-import {DataTableModule,SharedModule, EditorModule, DropdownModule, TabViewModule, GMapModule} from 'primeng/primeng';
+import {DataTableModule,SharedModule, DropdownModule, TabViewModule, GMapModule} from 'primeng/primeng';
 import { ProductEditComponent } from './containers/product-edit/product-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CKEditorModule } from 'ng2-ckeditor';
 
 
 @NgModule({
@@ -31,14 +31,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CommonModule,
     DahboardRoutingModule,
     DataTableModule,
-    EditorModule,
     DropdownModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     TabViewModule,
-    GMapModule
+    GMapModule,
+    CKEditorModule
   ],
   declarations: [DashboardComponent, DashHeaderComponent, DashMenuComponent, ProductsComponent, ProductEditComponent, ScreenBelowLarge, ScreenLarge, HomeComponent],
   providers: [

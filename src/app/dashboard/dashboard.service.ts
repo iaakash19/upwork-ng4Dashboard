@@ -13,13 +13,13 @@ export class DashboardService {
             {
                 title: 'dashboard',
                 link: 'home',
-                icon: 'dashboard',
+                icon: 'stats-growth',
                 subNav: []
             },
             {
                 title: 'tracking',
                 link: '',
-                icon: 'clock-o',
+                icon: 'satellite-dish2',
                 subNav: [
                     {
                         title: 'cases',
@@ -42,7 +42,7 @@ export class DashboardService {
             {
                 title: 'products',
                 link: 'products',
-                icon: 'product-hunt',
+                icon: 'copy',
                 subNav: []
             }
             

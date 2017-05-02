@@ -24,6 +24,7 @@ export class DashMenuComponent implements OnInit {
   }
 
   toggleSubnavAndMakeActive() {
+    this.DashboardService.isMenuExpanded = true;
     this.isOpen = !this.isOpen;
     this.isActive = !this.isActive;
   }
