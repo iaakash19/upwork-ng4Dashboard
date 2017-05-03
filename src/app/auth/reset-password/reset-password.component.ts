@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
@@ -10,6 +11,9 @@ import 'rxjs/add/operator/debounceTime';
 })
 export class ResetPasswordComponent implements OnInit {
   
+  
+  msgs = [];
+
   private validationMessages = {
     required: 'This Field is Required',
     pattern: 'Please Enter Valid Email'
@@ -20,10 +24,12 @@ export class ResetPasswordComponent implements OnInit {
   resetForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit() {
+    
     this.resetForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]]
     });
@@ -49,7 +55,10 @@ export class ResetPasswordComponent implements OnInit {
     }
   }
   onSubmit() {
-    console.log(this.resetForm.value);
+     this.msgs.push({severity:'success', detail:'Email sent'});
+     let timeoutId = setTimeout(() => {  
+        this.router.navigate(['/login']);
+    }, 1000);
   }
 
 }

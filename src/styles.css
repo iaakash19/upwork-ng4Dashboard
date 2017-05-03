@@ -284,3 +284,8 @@ button:disabled {
 ul {
     list-style: none;
 }
+
+.ui-growl {
+background-color: #4CAF50;
+    border-color: #4CAF50;
+}
