@@ -1,0 +1,31 @@
+:host {
+    position: absolute;
+    width: 350px;
+    background: white;
+    right: 0;
+    top: 34px;
+    z-index: 9999;
+    box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+}
+
+.not-header {
+        background: #d7e2e9;
+    padding: 10px 20px;
+    color: #353535;
+}
+
+.not_footer {
+        background: #d7e2e9;
+    padding: 10px 20px;
+    color: #353535;
+    text-align: center;
+}
+
+.noNotifs {
+    color: #999999;
+    font-size: 12px;
+    line-height: 1.6666667;
+    font-weight: 400;
+}
+

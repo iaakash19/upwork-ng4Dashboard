@@ -20,6 +20,9 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    li {
+        position: relative;
+    }
 }
 
 a {
@@ -62,19 +65,41 @@ a {
        }
 }
 
+// .subnav {
+//     height: 0;
+//     max-height: 0;
+//     overflow: hidden;
+//     transition: max-height 0.3s ease;
+//     a {
+//         padding-left: 100px;
+//     }
+//     &.open {
+//         height: auto;
+//         max-height: 20em;
+//     }
+// }
+
+// When Menu is Shrinked
+
 .subnav {
-    height: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    a {
-        padding-left: 100px;
-    }
-    &.open {
-        height: auto;
-        max-height: 20em;
+    position: absolute;
+    top: 0;
+    left: 56px;
+    background: #434343;
+    z-index: 999;
+    display: none;
+}
+
+nav {
+    & > ul > li {
+        &:hover {
+            & > .subnav {
+                display: block;
+            }
+        }
     }
 }
+
 i.anchor-right {
     transition: transform 0.3s ease;
 }

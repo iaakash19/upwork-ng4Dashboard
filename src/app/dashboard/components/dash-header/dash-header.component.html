@@ -4,7 +4,16 @@
   </div>
 
   <div class="dashboard-controls">
-    <i class="icon-bell2"></i>
+
+    <div class="notification_wrapper" (click)="toggleNotif()">
+      <i class="icon-bell2" >
+        <span class="count">{{DashboardService.notifications.length}}</span>
+      </i>
+      <notification-box *ngIf="DashboardService.isNotifVisible" [notifications]="DashboardService.notifications">
+
+      </notification-box>
+    </div>
+
     <i class="icon-switch2" (click)="triggerLogout()"></i>
   </div>
 </div>

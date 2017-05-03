@@ -24,6 +24,7 @@ import {DataTableModule,SharedModule, DropdownModule, TabViewModule, GMapModule}
 import { ProductEditComponent } from './containers/product-edit/product-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { NotificationBoxComponent } from './components/notification-box/notification-box.component';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { CKEditorModule } from 'ng2-ckeditor';
     GMapModule,
     CKEditorModule
   ],
-  declarations: [DashboardComponent, DashHeaderComponent, DashMenuComponent, ProductsComponent, ProductEditComponent, ScreenBelowLarge, ScreenLarge, HomeComponent],
+  declarations: [DashboardComponent, DashHeaderComponent, DashMenuComponent, ProductsComponent, ProductEditComponent, ScreenBelowLarge, ScreenLarge, HomeComponent, NotificationBoxComponent],
   providers: [
     ProductsService,
     ProductsResolver,

@@ -1,6 +1,6 @@
-<div class="logoWrapper" *ngIf="ScreenService.isLarge()">
+<a class="logoWrapper" *ngIf="ScreenService.isLarge()" routerLink="/dashboard/home">
   <img src="assets/logo.png" alt="">
-</div>
+</a>
 <div class="userBlock">
   <span class="avatar">
     <img src="assets/messi.jpg" alt="">
@@ -27,7 +27,8 @@
             <i class="icon-anchor-right" *ngIf="item.subNav.length" aria-hidden="true"></i>
           </a>
           
-          <ul class="subnav" [ngClass]="{open : isOpen}" *ngIf="item.subNav.length">
+          <ul class="subnav" *ngIf="item.subNav.length">
+              <li class="nav_header">{{item.title}}</li>
               <li *ngFor="let subItem of item.subNav">
                 <a [routerLink]="subItem.link">{{subItem.title}}</a>
               </li>

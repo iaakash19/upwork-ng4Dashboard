@@ -208,6 +208,15 @@ padding: 0.75rem .25em;
 .icon-copy:before {
     content: "\ea24";
 }
+.icon-windows2:before {
+    content: "\e9a6";
+}
+.icon-cog3:before {
+    content: "\eb76";
+}
+.icon-statistics:before {
+    content: "\e9b4";
+}
 
 .custom-icon.delete-icon {
     background-image: url(assets/sensor-icon-img.png);
@@ -265,4 +274,13 @@ button:disabled {
     pointer-events: none;
     background: #cfcfcf;
     border-color:  #cfcfcf;
+}
+
+.icon-menu:before {
+    content: "\ec67";
+    color: black;
+}
+
+ul {
+    list-style: none;
 }

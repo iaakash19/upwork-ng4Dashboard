@@ -7,7 +7,17 @@ export class DashboardService {
 
     isMenuExpanded: boolean = false;
     isMenuVisible: boolean = false;
-    
+    notifications: Array<any> = [
+        {
+            text: 'Sample Notification 1'
+        },
+        {
+            text: 'Sample Notification 2'
+        }
+    ];
+    isNotifVisible = false;
+
+
     get menuConf() {
         return [
             {
@@ -42,6 +52,30 @@ export class DashboardService {
             {
                 title: 'products',
                 link: 'products',
+                icon: 'copy',
+                subNav: []
+            },
+            {
+                title: 'Reports',
+                link: 'home',
+                icon: 'statistics',
+                subNav: []
+            },
+            {
+                title: 'Configuration',
+                link: 'home',
+                icon: 'cog3',
+                subNav: []
+            },
+            {
+                title: 'Diagnostics',
+                link: 'home',
+                icon: 'windows2',
+                subNav: []
+            },
+            {
+                title: 'Masters-Mongo',
+                link: 'home',
                 icon: 'copy',
                 subNav: []
             }
