@@ -27,23 +27,7 @@ export class ProductsService{
     let options = new RequestOptions({ headers: headers });
     let body = JSON.stringify(product);
 
-        debugger;
          return this.HTTP.put(`http://localhost:3000/products/${product.id}/`, body, options )
             .map( (res: Response) => res.json());
     }
 }
-
-
-
-    // fetchToken(): Observable<any> {
-    //      var headers = new Headers();
-    //       headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-    //     var creds = "username=" + this.username + "&password=" + this.password;
-        
-    //     return this.http.post('http://flms.internal.fetchr.us/api/auth/', creds, {
-    //         headers: headers
-    //     }).map( (res: Response) => {
-    //             return res.json();
-    //     }); 
-    // }

@@ -37,7 +37,6 @@ export class DashHeaderComponent implements OnInit {
   }
 
   toggleNotif() {
-    debugger;
     this.DashboardService.isNotifVisible = !this.DashboardService.isNotifVisible;
   }
 

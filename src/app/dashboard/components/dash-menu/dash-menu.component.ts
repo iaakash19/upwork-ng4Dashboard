@@ -26,15 +26,7 @@ export class DashMenuComponent implements OnInit {
      this.menuConf = this.DashboardService.menuConf;
   }
   makeMeActive(item) {
-    debugger;
     item.active = !item.active;
-  }
-  toggleSubnavAndMakeActive(index) {
-    debugger;
-
-    // this.DashboardService.isMenuExpanded = true;
-    // this.isOpen = !this.isOpen;
-    // this.isActive = !this.isActive;
   }
 
 }

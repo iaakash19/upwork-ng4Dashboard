@@ -119,9 +119,7 @@ checkProductName() {
   }
 
  checkErrors(c: AbstractControl, type) {
-      debugger;
       if( (c.dirty || c.touched) && c.errors ) {
-        debugger;
         Object.keys(c.errors).map(key => {
           if(type == 'name') { 
             this.productNameMessage = `Name ${this.validationMessages[key]}`;

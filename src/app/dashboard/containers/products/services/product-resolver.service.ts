@@ -12,7 +12,6 @@ export class ProductResolver implements Resolve<any> {
     ) { }
     
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-        debugger;
         const id = +route.params['id']; // converting string to number with '+'
         return this.ProductsService.getProduct(id);
     }

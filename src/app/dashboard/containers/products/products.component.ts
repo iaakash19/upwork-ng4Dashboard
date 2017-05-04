@@ -18,12 +18,10 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.products = this.route.snapshot.data['products'];
-    debugger;
   }
 
   onRowSelect(product) {
     this.router.navigate([product.data.id, 'edit'], {relativeTo: this.route});
-      // <a [routerLink]="['/products', product.id, 'edit']">Edit</a>
   }
 
 }
