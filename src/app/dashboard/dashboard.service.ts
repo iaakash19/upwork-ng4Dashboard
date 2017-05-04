@@ -24,12 +24,14 @@ export class DashboardService {
                 title: 'dashboard',
                 link: 'home',
                 icon: 'stats-growth',
-                subNav: []
+                subNav: [],
+                active: false
             },
             {
                 title: 'tracking',
                 link: '',
                 icon: 'satellite-dish2',
+                active: false,
                 subNav: [
                     {
                         title: 'cases',
@@ -53,31 +55,45 @@ export class DashboardService {
                 title: 'products',
                 link: 'products',
                 icon: 'copy',
-                subNav: []
+                subNav: [],
+                active: false
             },
             {
                 title: 'Reports',
                 link: 'home',
                 icon: 'statistics',
-                subNav: []
+                subNav: [],
+                active: false
             },
             {
                 title: 'Configuration',
                 link: 'home',
                 icon: 'cog3',
-                subNav: []
+                subNav: [],
+                active: false
             },
             {
                 title: 'Diagnostics',
                 link: 'home',
                 icon: 'windows2',
-                subNav: []
+                active: false,
+                subNav: [
+                     {
+                        title: 'Download',
+                        link: 'home', 
+                    },
+                    {
+                        title: 'Message',
+                        link: 'home', 
+                    },
+                ]
             },
             {
                 title: 'Masters-Mongo',
                 link: 'home',
                 icon: 'copy',
-                subNav: []
+                subNav: [],
+                active: false
             }
             
         ]

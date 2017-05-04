@@ -10,25 +10,34 @@
 <nav>
   
   <ul>
-      <li *ngFor="let item of DashboardService.menuConf" [routerLink]="true">
-
-        <a [routerLink]="item.link" *ngIf="!item.subNav.length">
+      <li  (click)="makeMeActive(item)" *ngFor="let item of menuConf; let i = index">
+        <a [routerLink]="item.link" *ngIf="!item.subNav.length" routerLinkActive="active" >
             <div class="linkBlock">
               <i class="fa" [ngClass]="'icon-'+item.icon"></i>
               <span class="text">{{item.title}} </span>
             </div> 
           </a>
 
-          <a (click)="toggleSubnavAndMakeActive()" *ngIf="item.subNav.length" [ngClass]="{ active: isActive }">
+          <a *ngIf="item.subNav.length" [ngClass]="{'active' : item.active}">
             <div class="linkBlock">
               <i class="fa" [ngClass]="'icon-'+item.icon"></i>
               <span class="text">{{item.title}} </span>
             </div> 
             <i class="icon-anchor-right" *ngIf="item.subNav.length" aria-hidden="true"></i>
           </a>
-          
-          <ul class="subnav" *ngIf="item.subNav.length">
+          <ul class="subnav openWithClick" [ngClass]="{'open' : item.active}" *ngIf="DashboardService.isMenuExpanded">
               <li class="nav_header">{{item.title}}</li>
+              <li *ngFor="let subItem of item.subNav">
+                <a [routerLink]="subItem.link">{{subItem.title}}</a>
+              </li>
+          </ul>
+          <ul class="subnav openOnHover" *ngIf="!DashboardService.isMenuExpanded">
+              <li class="nav_header" *ngIf="!item.subNav.length">
+                <a  [routerLink]="item.link">{{item.title}} </a>
+              </li>
+              <li class="nav_header" *ngIf="item.subNav.length">
+               {{item.title}}
+              </li>
               <li *ngFor="let subItem of item.subNav">
                 <a [routerLink]="subItem.link">{{subItem.title}}</a>
               </li>

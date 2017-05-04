@@ -14,19 +14,27 @@ export class DashMenuComponent implements OnInit {
   
   isOpen = false;
   isActive = false;
-
+  selectedLink = {};
+  menuConf;
+  
   constructor(
     public DashboardService: DashboardService,
     public ScreenService: ScreenService
   ) { }
 
   ngOnInit() {
+     this.menuConf = this.DashboardService.menuConf;
   }
+  makeMeActive(item) {
+    debugger;
+    item.active = !item.active;
+  }
+  toggleSubnavAndMakeActive(index) {
+    debugger;
 
-  toggleSubnavAndMakeActive() {
-    this.DashboardService.isMenuExpanded = true;
-    this.isOpen = !this.isOpen;
-    this.isActive = !this.isActive;
+    // this.DashboardService.isMenuExpanded = true;
+    // this.isOpen = !this.isOpen;
+    // this.isActive = !this.isActive;
   }
 
 }

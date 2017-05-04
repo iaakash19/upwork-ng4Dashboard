@@ -21,11 +21,13 @@ import { ScreenService } from './screen.service';
 
 import { ScreenBelowLarge } from './directives/screen-below-large.directive';
 import { ScreenLarge } from './directives/screen-large.directive';
+import { ToggleFullscreenDirective } from './directives/fullscreen.directive';
 
 import {DataTableModule,SharedModule, DropdownModule, TabViewModule, GMapModule} from 'primeng/primeng';
 import { ProductEditComponent } from './containers/product-edit/product-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from 'ng2-ckeditor';
+import {TooltipModule} from 'primeng/primeng';
 import { NotificationBoxComponent } from './components/notification-box/notification-box.component';
 
 
@@ -42,9 +44,10 @@ import { NotificationBoxComponent } from './components/notification-box/notifica
     BrowserAnimationsModule,
     TabViewModule,
     GMapModule,
-    CKEditorModule
+    CKEditorModule,
+    TooltipModule
   ],
-  declarations: [DashboardComponent, DashHeaderComponent, DashMenuComponent, ProductsComponent, ProductEditComponent, ScreenBelowLarge, ScreenLarge, HomeComponent, NotificationBoxComponent],
+  declarations: [DashboardComponent, DashHeaderComponent, DashMenuComponent, ProductsComponent, ProductEditComponent, ScreenBelowLarge, ScreenLarge, HomeComponent, NotificationBoxComponent, ToggleFullscreenDirective],
   providers: [
     ProductsService,
     ProductsResolver,

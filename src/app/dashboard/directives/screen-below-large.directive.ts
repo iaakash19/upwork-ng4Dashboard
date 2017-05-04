@@ -1,6 +1,7 @@
 import { Directive, Input, OnDestroy, TemplateRef, ViewContainerRef } from '@angular/core';
 
 import { ScreenService } from './../screen.service';
+import { DashboardService } from './../dashboard.service';
 import { Subscription } from 'rxjs/Subscription';
 
 @Directive({selector: '[screenBelowLarge]'}) 
@@ -10,7 +11,9 @@ export class ScreenBelowLarge implements OnDestroy {
 
   constructor(private viewContainer: ViewContainerRef, 
                 private template: TemplateRef<Object>,
-                private screenService: ScreenService) {
+                private screenService: ScreenService,
+                private DashboardService: DashboardService
+                ) {
 
     this.screenSubscription = screenService.resize$.subscribe(() => this.onResize());
 
@@ -24,9 +27,11 @@ export class ScreenBelowLarge implements OnDestroy {
     if (condition && !this.hasView) {
       this.hasView = true;
       this.viewContainer.createEmbeddedView(this.template);
+      this.DashboardService.isMenuExpanded = true;
     } else if (!condition && this.hasView) {
       this.hasView = false;
       this.viewContainer.clear();
+      this.DashboardService.isMenuExpanded = false;
     }
   }
 

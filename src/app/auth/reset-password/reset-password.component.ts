@@ -56,9 +56,9 @@ export class ResetPasswordComponent implements OnInit {
   }
   onSubmit() {
      this.msgs.push({severity:'success', detail:'Email sent'});
-     let timeoutId = setTimeout(() => {  
-        this.router.navigate(['/login']);
-    }, 1000);
+    //  let timeoutId = setTimeout(() => {  
+    //     this.router.navigate(['/login']);
+    // }, 1000);
   }
 
 }
