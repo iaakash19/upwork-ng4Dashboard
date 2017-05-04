@@ -16,7 +16,6 @@ export class AuthService {
   validatUser(user): boolean{
     if ( JSON.stringify(user) === JSON.stringify(this.allowedUser)  ) {
       this.currentUser = user;
-      debugger;
       return true;
     }
     return false;
