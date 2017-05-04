@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 import { DahboardRoutingModule } from './dashboard-routing.module';
 
 
@@ -30,6 +32,7 @@ import { NotificationBoxComponent } from './components/notification-box/notifica
 @NgModule({
   imports: [
     CommonModule,
+    HttpModule,
     DahboardRoutingModule,
     DataTableModule,
     DropdownModule,

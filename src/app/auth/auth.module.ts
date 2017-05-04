@@ -14,11 +14,13 @@ import { AuthGuardService } from './auth-guard.service';
 const routeConfig = [
     {
       path: 'login', 
-      component: LoginComponent
+      component: LoginComponent,
+      data: { title: 'Login' }
     },
     {
       path: 'reset-password', 
-      component: ResetPasswordComponent  
+      component: ResetPasswordComponent ,
+      data: { title: 'Reset Pasword' }
     }
 ]
 

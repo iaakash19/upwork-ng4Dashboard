@@ -22,6 +22,7 @@ const ROUTES = [
       {
         path: '',
         component: DashboardComponent,
+        data: { title: 'Dashboard' }, 
         children: [
           {
             path: 'products',
@@ -29,18 +30,21 @@ const ROUTES = [
               {
                 path: '',
                 component: ProductsComponent,
-                resolve: { products:  ProductsResolver }
+                resolve: { products:  ProductsResolver },
+                data: { title: 'Products' }
               },
               {
                 path: ':id/edit',
                 component: ProductEditComponent,
-                resolve: { product: ProductResolver }
+                resolve: { product: ProductResolver },
+                data: { title: 'Product' }
               }
             ]
           },
           {
             path: 'home',
-            component: HomeComponent
+            component: HomeComponent,
+            data: { title: 'Dashboard' }
           }
         ]
       }

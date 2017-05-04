@@ -24,14 +24,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     
-
-
-      // this.ScreenService.resize$
-      //     .subscribe( () => {
-      //         if(this.ScreenService.screenWidth > this.ScreenService.largeBreakpoint) {
-
-      //         }
-      //     })
   }
 
 }
