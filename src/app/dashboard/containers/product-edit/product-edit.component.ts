@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormArray, Validators, AbstractControl } from '@angular/forms';
 import { ProductsService } from './../products/services/products.service';
 
@@ -34,7 +34,8 @@ export class ProductEditComponent implements OnInit  {
   constructor(
     private route: ActivatedRoute,
     private fb: FormBuilder,
-    private ProductsService: ProductsService
+    private ProductsService: ProductsService,
+    private Router: Router
   ) { }
   
   get attrs(): FormArray {
@@ -164,7 +165,7 @@ checkProductName() {
     
     this.ProductsService.updateProduct(productToUpdate)
       .subscribe(item => {
-        debugger;
+          this.Router.navigate(['/dashboard/products']);
       })
   }
 

@@ -36,7 +36,15 @@
   </div>
 
   <div class="secondaryBar dashboard-controls" *ngIf="isSecBarVisible">
-   <i class="icon-bell2"></i>
+    <div (click)="toggleNotif()" class="notif_wrapper">
+         <i class="icon-bell2"></i>
+         <span class="text">Notifications</span>
+         <span class="notif_count">{{DashboardService.notifications.length}}</span>
+         <notification-box *ngIf="DashboardService.isNotifVisible" [notifications]="DashboardService.notifications">
+
+      </notification-box>
+    </div>
+  
     <i class="icon-switch2" (click)="triggerLogout()"></i>
   </div>
 
