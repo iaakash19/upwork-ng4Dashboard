@@ -49,7 +49,11 @@ export class ProductEditComponent implements OnInit  {
   get attrs(): FormArray {
     return <FormArray>this.productForm.get('attrs');
   }
-
+  
+  transitionToproducts() {
+      this.Router.navigate(['/dashboard/products']);
+      this.DashboardService.isMask = false;
+  }
   ngOnInit() {
     
       this.display = true;

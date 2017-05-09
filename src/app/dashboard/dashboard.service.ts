@@ -6,8 +6,10 @@ export class DashboardService {
     constructor() { }
 
     isMenuExpanded: boolean = true;
-    isMask = false;
+    isMask  = false
     isMenuVisible: boolean = false;
+    showProductSearch: boolean = false;
+    
     notifications: Array<any> = [
         {
             text: 'Sample Notification 1'
@@ -36,7 +38,20 @@ export class DashboardService {
                 subNav: [
                     {
                         title: 'cases',
-                        link: 'cases', 
+                        link: 'cases',
+                        active: false,
+                        subNav: [
+                            {
+                                title: 'Reports',
+                                link: 'home',
+                                icon: 'statistics'
+                            },
+                            {
+                                title: 'Configuration',
+                                link: 'home',
+                                icon: 'cog3'
+                            },
+                        ]
                     },
                     {
                         title: 'dispatch',
@@ -44,7 +59,20 @@ export class DashboardService {
                     },
                     {
                         title: 'notes',
-                        link: 'notes', 
+                        link: 'notes',
+                        active: false,
+                        subNav: [
+                            {
+                                title: 'Reports',
+                                link: 'home',
+                                icon: 'statistics'
+                            },
+                            {
+                                title: 'Configuration',
+                                link: 'home',
+                                icon: 'cog3'
+                            },
+                        ]
                     },
                     {
                         title: 'notifications',

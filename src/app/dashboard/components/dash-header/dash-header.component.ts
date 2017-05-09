@@ -3,6 +3,7 @@ import { DashboardService } from './../../dashboard.service';
 import { AuthService } from './../../../auth/auth.service';
 import { ScreenService } from '../../screen.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, FormArray, Validators, AbstractControl} from '@angular/forms';
 
 @Component({
   selector: 'dash-header',
@@ -12,17 +13,48 @@ import { Router } from '@angular/router';
 export class DashHeaderComponent implements OnInit {
   
   isSecBarVisible = false;
+  drop = false;
+
+    cities = [];
+        searchForm;
 
   constructor(
     public DashboardService: DashboardService,
     public AuthService: AuthService,
     public Router: Router,
-    public ScreenService: ScreenService
+    public ScreenService: ScreenService,
+     private fb: FormBuilder,
   ) { }
-
-  ngOnInit() {
+  
+  toggleDrop(event) {
+    this.drop = !this.drop;
+    event.preventDefault();
   }
 
+  ngOnInit() {
+    this.cities.push({label:'New York', value:'New York'});
+        this.cities.push({label:'Rome', value:'Rome'});
+        this.cities.push({label:'London', value:'London'});
+        this.cities.push({label:'Istanbul', value:'Istanbul'});
+        this.cities.push({label:'Paris', value:'Paris'});
+        this.cities.push({label:'New York', value:'New York'});
+        this.cities.push({label:'Rome', value:'Rome'});
+        this.cities.push({label:'London', value:'London'});
+        this.cities.push({label:'Istanbul', value:'Istanbul'});
+        this.cities.push({label:'Paris', value:'Paris'});
+
+        this.searchForm = this.fb.group({
+          tag: '',
+          name: '',
+          fromdate: '',
+          todate: ''
+    });
+
+  }
+  onSubmit() {
+    debugger;
+    console.log('this.searchForm', this.searchForm.value);
+  }
   toggleMenu() {
     this.DashboardService.isMenuExpanded = !this.DashboardService.isMenuExpanded;
   }

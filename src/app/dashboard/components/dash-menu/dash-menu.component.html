@@ -31,17 +31,20 @@
           <ul class="subnav openWithClick" [ngClass]="{'open' : item.active}" *ngIf="DashboardService.isMenuExpanded">
               <li class="nav_header">{{item.title}}</li>
 
-              <li *ngFor="let subItem of item.subNav">
+              <li *ngFor="let subItem of item.subNav" (click)="toggleSubnav(subItem, $event)" [ngClass]="{subActive: subItem.active}">
 
-                <a [routerLink]="subItem.link">
+                <a [routerLink]="subItem.link" *ngIf="!subItem.subNav">
+                  <div class="linkBlock">{{subItem.title}}</div>
+                </a>
+                <a *ngIf="subItem.subNav">
                   <div class="linkBlock">{{subItem.title}}</div>
                   <i class="icon-anchor-right" *ngIf="subItem.subNav" aria-hidden="true"></i>
                 </a>
-                  <ul class="second_level" *ngIf="subItem.subNav">
-                    <li *ngFor="let item of subItem.subNav">
-                      <a [routerLink]="subItem.link"> {{ item.title }} </a>
-                    </li>
-                  </ul>
+                <ul class="second_level" *ngIf="subItem.subNav" [ngClass]="{drop: subItem.active}">
+                  <li *ngFor="let item of subItem.subNav">
+                    <a [routerLink]="subItem.link"> {{ item.title }} </a>
+                  </li>
+                </ul>
               </li>
           </ul>
           <ul class="subnav openOnHover" *ngIf="!DashboardService.isMenuExpanded">
@@ -51,9 +54,14 @@
               <li class="nav_header" *ngIf="item.subNav.length">
                {{item.title}}
               </li>
-              <li *ngFor="let subItem of item.subNav">
-                <a [routerLink]="subItem.link">{{subItem.title}}</a>
-                <ul class="second_level" *ngIf="subItem.subNav">
+              <li *ngFor="let subItem of item.subNav" (click)="toggleSubnav(subItem, $event)" [ngClass]="{subActive: subItem.active}">
+                <a *ngIf="!subItem.subNav" [routerLink]="subItem.link">{{subItem.title}}</a>
+                <a *ngIf="subItem.subNav">
+                  <div class="linkBlock">{{subItem.title}}</div>
+                  <i class="icon-anchor-right" *ngIf="subItem.subNav" aria-hidden="true"></i>
+                </a>
+
+                <ul class="second_level" *ngIf="subItem.subNav" [ngClass]="{drop: subItem.active}">
                   <li *ngFor="let item of subItem.subNav">
                     <a [routerLink]="subItem.link"> {{ item.title }} </a>
                   </li>

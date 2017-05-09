@@ -1,5 +1,10 @@
+    <h3 class="page_header flex">
+        <span class="text">Edit Product</span>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" (click)="transitionToproducts()" >×</span></button>
+    </h3>
 
-<h3 class="page_header">Edit Product</h3>
+
+
 
 <div class="errorMsgBox" *ngIf="!productForm.valid">
     <p *ngIf="productNameMessage"> {{productNameMessage}} </p>

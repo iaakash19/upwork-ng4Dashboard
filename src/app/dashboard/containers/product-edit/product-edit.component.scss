@@ -3,12 +3,16 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    
-    animation: test 1s 2s 1 forwards;
+    animation: test 1s  ease-out 0s forwards;
     transform: translateY(-116vh);
         z-index: 999;
     background: white;
+    form {
+        padding: 1rem;
+    }
 }
+
+
 
 
 
@@ -79,5 +83,8 @@
     align-items: center;
     justify-content: space-between;
 }
+
+
+
 
 

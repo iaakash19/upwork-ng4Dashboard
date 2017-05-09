@@ -29,4 +29,10 @@ export class DashMenuComponent implements OnInit {
     item.active = !item.active;
   }
 
+  toggleSubnav(item, $event) {
+    debugger;
+    item.active = !item.active;
+    $event.stopPropagation();
+  }
+
 }

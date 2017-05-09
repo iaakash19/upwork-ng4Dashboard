@@ -4,14 +4,64 @@
   </div>
 
   <div class="dashboard-controls">
+    
+
+<div class="navbar-form" *ngIf="DashboardService.showProductSearch">
+						<div class="input-group navbar-search" id="adv-search">
+							<input type="text" class="form-control search-control" id="srh_global" placeholder="Search">
+
+                							<div class="dropdown input-group-btn" (click)="op.toggle($event)">
+
+								<button type="button" class="btn  dropdown-toggle btn-icon" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+								<button type="button" id="search-btn" class="btn btn-primary btn-nav-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+							</div>
+						</div>
+
+                      <p-overlayPanel #op>
+   		<div  class="dropdown-menu dropdown-menu-right dropdown-content" role="menu">
+										<form class="dropdown-content-body" [formGroup]="searchForm">
+                      <div class="form-group">
+                          <label for="type">Type</label>
+                          <p-dropdown [options]="cities" formControlName="tag" [filter]="true"></p-dropdown>
+                      </div>
+
+    <label class="control-label" for="srh_product">Product</label>
+    <div class="form-group has-feedback has-feedback-left">
+        <div class="input-group search-field">
+            <input class="form-control" formControlName="name" type="text" name="srh_product" id="srh_product" placeholder="Product Name">
+            <div class="form-control-feedback">
+                <i class="icon-search4 text-size-base"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+         <label class="control-label" for="srh_fromdate">Last Modified</label>
+    <div class="row">
+        <div class="col-md-12 calGrp">
+            <div class="form-group date-search ">
+                <p-calendar formControlName="fromdate" placeholder="From Date"></p-calendar>
+            </div>
+            <div class="form-group date-search ">
+                <p-calendar formControlName="todate" placeholder="To Date"></p-calendar>
+
+            </div>
+        </div>
+    </div>
+    </div>
+                      <button type="submit" id="adv-search-btn" (click)="onSubmit()" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
+                      <button type="reset" id="adv-reset-btn" class="btn btn-default"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Reset</button>
+										</form>
+								</div>
+</p-overlayPanel>
+					</div>
+       
 
     <div class="notification_wrapper" (click)="toggleNotif()">
       <i class="icon-bell2" >
         <span class="count">{{DashboardService.notifications.length}}</span>
       </i>
-      <notification-box *ngIf="DashboardService.isNotifVisible" [notifications]="DashboardService.notifications">
-
-      </notification-box>
+      <notification-box *ngIf="DashboardService.isNotifVisible" [notifications]="DashboardService.notifications"></notification-box>
     </div>
 
     <i class="icon-switch2" (click)="triggerLogout()"></i>
@@ -34,9 +84,60 @@
         </div>
       </div>
   </div>
-
+  
   <div class="secondaryBar dashboard-controls" *ngIf="isSecBarVisible">
-    <div (click)="toggleNotif()" class="notif_wrapper">
+    <div class="navbar-form" *ngIf="DashboardService.showProductSearch">
+						<div class="input-group navbar-search" id="adv-search">
+							<input type="text" class="form-control search-control" id="srh_global" placeholder="Search">
+
+                							<div class="dropdown input-group-btn" (click)="op.toggle($event)">
+
+								<button type="button" class="btn  dropdown-toggle btn-icon" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+								<button type="button" id="search-btn" class="btn btn-primary btn-nav-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+							</div>
+						</div>
+
+                      <p-overlayPanel #op>
+   		<div  class="dropdown-menu dropdown-menu-right dropdown-content" role="menu">
+										<form class="dropdown-content-body" [formGroup]="searchForm">
+                      <div class="form-group">
+                          <label for="type">Type</label>
+                          <p-dropdown [options]="cities" formControlName="tag" [filter]="true"></p-dropdown>
+                      </div>
+
+    <label class="control-label" for="srh_product">Product</label>
+    <div class="form-group has-feedback has-feedback-left">
+        <div class="input-group search-field">
+            <input class="form-control" formControlName="name" type="text" name="srh_product" id="srh_product" placeholder="Product Name">
+            <div class="form-control-feedback">
+                <i class="icon-search4 text-size-base"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+         <label class="control-label" for="srh_fromdate">Last Modified</label>
+    <div class="row">
+        <div class="col-md-12 calGrp">
+            <div class="form-group date-search ">
+                <p-calendar formControlName="fromdate" placeholder="From Date"></p-calendar>
+            </div>
+            <div class="form-group date-search ">
+                <p-calendar formControlName="todate" placeholder="To Date"></p-calendar>
+
+            </div>
+        </div>
+    </div>
+    </div>
+                      <button type="submit" id="adv-search-btn" (click)="onSubmit()" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
+                      <button type="reset" id="adv-reset-btn" class="btn btn-default"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Reset</button>
+										</form>
+								</div>
+</p-overlayPanel>
+					</div>
+
+          <div class="restOfControls">
+              <div (click)="toggleNotif()" class="notif_wrapper">
          <i class="icon-bell2"></i>
          <span class="text">Notifications</span>
          <span class="notif_count">{{DashboardService.notifications.length}}</span>
@@ -46,6 +147,8 @@
     </div>
   
     <i class="icon-switch2" (click)="triggerLogout()"></i>
+          </div>
+    
   </div>
 
 </div>

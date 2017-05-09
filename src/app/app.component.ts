@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute, NavigationStart, NavigationCancel, NavigationError } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
+import { DashboardService } from './dashboard/dashboard.service';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
@@ -20,7 +21,8 @@ export class AppComponent implements OnInit {
       private router: Router,
       private activatedRoute: ActivatedRoute,
       private titleService: Title,
-      private slimLoadingBarService: SlimLoadingBarService
+      private slimLoadingBarService: SlimLoadingBarService,
+      private DashboardService: DashboardService
   ) {
       
   }
@@ -70,8 +72,13 @@ export class AppComponent implements OnInit {
             routerEvent instanceof NavigationCancel ||
             routerEvent instanceof NavigationError) {
             this.loading = false;
-            // this.stopLoading();
-            // debugger;
+            this.stopLoading();
+            debugger;
+            if(routerEvent.url === "/dashboard/products") {
+                this.DashboardService.showProductSearch = true;
+            }else {
+                this.DashboardService.showProductSearch = false;
+            }
         }
   }
 }

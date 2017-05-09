@@ -23,7 +23,7 @@ import { ScreenBelowLarge } from './directives/screen-below-large.directive';
 import { ScreenLarge } from './directives/screen-large.directive';
 import { ToggleFullscreenDirective } from './directives/fullscreen.directive';
 
-import {DataTableModule,SharedModule, DropdownModule, TabViewModule, GMapModule, DialogModule} from 'primeng/primeng';
+import {DataTableModule,SharedModule, DropdownModule, TabViewModule, GMapModule, DialogModule, CalendarModule, OverlayPanelModule} from 'primeng/primeng';
 import { ProductEditComponent } from './containers/product-edit/product-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from 'ng2-ckeditor';
@@ -47,7 +47,9 @@ import { DashMaskComponent } from './components/dash-mask/dash-mask.component';
     GMapModule,
     CKEditorModule,
     TooltipModule,
-    DialogModule
+    DialogModule,
+    CalendarModule,
+    OverlayPanelModule
   ],
   declarations: [DashboardComponent, DashHeaderComponent, DashMenuComponent, ProductsComponent, ProductEditComponent, ScreenBelowLarge, ScreenLarge, HomeComponent, NotificationBoxComponent, ToggleFullscreenDirective, DashMaskComponent],
   providers: [

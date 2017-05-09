@@ -171,6 +171,17 @@ padding: 0.75rem .25em;
   font-style: normal;
 }
 
+@font-face {
+	font-family: 'GLYPHICONS Halflings';
+	src: url('assets/icons/GLYPHICONSHalflings-Regular.eot');
+	src: url('assets/icons/GLYPHICONSHalflings-Regular.eot?#iefix') format('embedded-opentype'),
+		url('assets/icons/GLYPHICONSHalflings-Regular.woff') format('woff'),
+		url('assets/icons/GLYPHICONSHalflings-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
@@ -184,6 +195,24 @@ padding: 0.75rem .25em;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon {
+    font-size: 16px;
+    vertical-align: middle;
+    top: -1px;
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-paragraph-justify3:before {
@@ -529,3 +558,84 @@ label {
 .errorMsgBox p:first-child {
   margin-bottom: 1rem;
 }
+
+.caret:after {
+    content: '\e9c5';
+    font-family: 'icomoon';
+    display: block;
+    font-size: 16px;
+    width: 16px;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.glyphicon-search:before {
+    content: "\e003";
+}
+
+.icon-search4:before {
+    content: "\e98e";
+}
+
+.glyphicon-repeat:before {
+    content: "\e030";
+}
+
+.ui-calendar {
+    width: 100%;
+    display: block;
+}
+
+.ui-inputtext {
+    width: 100%;
+}
+
+p-overlaypanel {
+position: absolute;
+    width: 342px;
+    left: 0;
+    top: 0px;
+    z-index: 99;
+}
+
+.ui-overlaypanel {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+.page_header.flex {
+    display: flex;
+    justify-content: space-between;
+}
+.page_header.flex button.close {
+    opacity: 1;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-image: url('assets/cross-sm.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background: transparent;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.page_header.flex button.close span {
+    font-size: 1rem;
+    font-weight: 300;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+

@@ -269,3 +269,45 @@ ul.subnav {
    }
 }
 }
+
+
+ul.second_level {
+position: relative;
+    top: 0;
+    left: auto;
+    background: #434343;
+    z-index: 999;
+
+        height: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    &.drop {
+        height: auto;
+    max-height: 20em;
+    transition: max-height 0.3s ease;
+    }
+}
+
+li.subActive {
+    .linkBlock {
+        color: white;
+    }
+    i {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease;
+        &:before {
+            color: white;
+        }
+    }
+    &:after {
+        background: #008bf3 !important;
+    }
+    &:before {
+        border-color: #2a81ac !important;
+    }
+}
+
+
+    
