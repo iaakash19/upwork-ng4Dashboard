@@ -5,11 +5,12 @@ export class DashboardService {
     
     constructor() { }
 
-    isMenuExpanded: boolean = true;
+    isMenuExpanded: boolean = false;
     isMask  = false
     isMenuVisible: boolean = false;
     showProductSearch: boolean = false;
-    
+    showInlineLoader: boolean = false;
+
     notifications: Array<any> = [
         {
             text: 'Sample Notification 1'

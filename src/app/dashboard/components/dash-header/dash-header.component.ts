@@ -31,6 +31,10 @@ export class DashHeaderComponent implements OnInit {
     event.preventDefault();
   }
 
+  resetForm() {
+    this.searchForm.reset();
+  }
+
   ngOnInit() {
     this.cities.push({label:'New York', value:'New York'});
         this.cities.push({label:'Rome', value:'Rome'});

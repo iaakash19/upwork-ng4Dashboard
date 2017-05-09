@@ -536,6 +536,60 @@ label {
     height: 100vh;
 
 }
+.icon-spinner4:before {
+    content: "\eb53";
+}
+
+.spinner {
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+.inline-loader {
+position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.inline-loader .msg {
+    padding: 10px 15px;
+    margin: 0px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border: 0px;
+    background-color: rgb(51, 51, 51);
+    cursor: wait;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.inline-loader .msg i {
+    margin-right: 10px;
+}
+.inline-loader .msg i:before {
+    color: white;
+}
+   
+
+section.content > .container {
+    height: calc(100vh - 50px);
+    position: relative;
+}
 
 @keyframes test {
  

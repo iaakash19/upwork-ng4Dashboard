@@ -1,5 +1,6 @@
 <!--<dash-mask *ngIf="DashboardService.isMask"><dash-mask>-->
-  <div class="dash-mask" *ngIf="DashboardService.isMask"></div>
+<div class="dash-mask" *ngIf="DashboardService.isMask"></div>
+
 <section class="dashboard-wrapper">
 
   <dash-header *screenBelowLarge></dash-header>
@@ -12,6 +13,11 @@
     <dash-header *screenLarge></dash-header>
     <section class="content">
       <div class="container">
+
+        <div class="inline-loader" *ngIf="DashboardService.showInlineLoader">
+          <div class="msg"><i class="icon-spinner4 spinner position-left"></i>Getting Data</div>  
+        </div>
+
         <router-outlet></router-outlet>
       </div>
     </section>

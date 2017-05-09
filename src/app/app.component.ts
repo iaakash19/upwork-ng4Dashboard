@@ -29,7 +29,6 @@ export class AppComponent implements OnInit {
 
    startLoading() {
         this.slimLoadingBarService.start(() => {
-            console.log('Loading complete');
         });
     }
 
@@ -72,7 +71,7 @@ export class AppComponent implements OnInit {
             routerEvent instanceof NavigationCancel ||
             routerEvent instanceof NavigationError) {
             this.loading = false;
-            this.stopLoading();
+            this.completeLoading();
             debugger;
             if(routerEvent.url === "/dashboard/products") {
                 this.DashboardService.showProductSearch = true;
