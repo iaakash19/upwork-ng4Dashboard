@@ -25,10 +25,23 @@
             </div> 
             <i class="icon-anchor-right" *ngIf="item.subNav.length" aria-hidden="true"></i>
           </a>
+          
+          <!-- subnav -->
+
           <ul class="subnav openWithClick" [ngClass]="{'open' : item.active}" *ngIf="DashboardService.isMenuExpanded">
               <li class="nav_header">{{item.title}}</li>
+
               <li *ngFor="let subItem of item.subNav">
-                <a [routerLink]="subItem.link">{{subItem.title}}</a>
+
+                <a [routerLink]="subItem.link">
+                  <div class="linkBlock">{{subItem.title}}</div>
+                  <i class="icon-anchor-right" *ngIf="subItem.subNav" aria-hidden="true"></i>
+                </a>
+                  <ul class="second_level" *ngIf="subItem.subNav">
+                    <li *ngFor="let item of subItem.subNav">
+                      <a [routerLink]="subItem.link"> {{ item.title }} </a>
+                    </li>
+                  </ul>
               </li>
           </ul>
           <ul class="subnav openOnHover" *ngIf="!DashboardService.isMenuExpanded">
@@ -40,9 +53,18 @@
               </li>
               <li *ngFor="let subItem of item.subNav">
                 <a [routerLink]="subItem.link">{{subItem.title}}</a>
+                <ul class="second_level" *ngIf="subItem.subNav">
+                  <li *ngFor="let item of subItem.subNav">
+                    <a [routerLink]="subItem.link"> {{ item.title }} </a>
+                  </li>
+                </ul>
               </li>
           </ul>
+
+
       </li>
   </ul>
+
+
 
 </nav>

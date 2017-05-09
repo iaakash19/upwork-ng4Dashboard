@@ -41,6 +41,11 @@ ul {
         }
     }
 }
+a {
+    display: flex;
+    align-items: center;
+}
+
 nav > ul > li {
 border-top: 1px solid #3d3d3d;
     border-bottom: 1px solid #525252;
@@ -118,7 +123,7 @@ nav > ul > li > a {
     top: 0;
     left: 56px;
     background: #434343;
-    z-index: 999;
+    z-index: 1000;
     display: none;
 }
 
@@ -231,7 +236,7 @@ ul.subnav {
             font-size: 13px;
              text-decoration: none;
              text-transform: capitalize;
-             display: block;
+             //display: block;
              transition: background-color 0.3s ease;
              &:hover {
                      background-color: rgba(0, 0, 0, 0.1);

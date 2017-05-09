@@ -5,7 +5,8 @@ export class DashboardService {
     
     constructor() { }
 
-    isMenuExpanded: boolean = false;
+    isMenuExpanded: boolean = true;
+    isMask = false;
     isMenuVisible: boolean = false;
     notifications: Array<any> = [
         {

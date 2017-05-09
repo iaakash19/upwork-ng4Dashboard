@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
     }
 
   onSubmit() {
-    console.log(this.loginForm);
+    
     if ( this.authService.validatUser(this.loginForm.value)) {
       // If redirectUrl Exist
       if(this.authService.redirectUrl) {
@@ -84,6 +84,7 @@ export class LoginComponent implements OnInit {
       }else {
         this.router.navigate(['dashboard/home']);
       }
+      
     }
     else {
       this.loginFailed = 'Username and Password does not Exist';

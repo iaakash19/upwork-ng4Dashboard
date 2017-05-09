@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angula
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormArray, Validators, AbstractControl } from '@angular/forms';
 import { ProductsService } from './../products/services/products.service';
+import { DashboardService } from './../../dashboard.service';
 
 import 'rxjs/add/operator/debounceTime';
 
@@ -30,12 +31,19 @@ export class ProductEditComponent implements OnInit  {
   private validationMessages = {
     required: 'is Required',
   }
+  display: boolean = false;
+
+
+      
+    
+
 
   constructor(
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private ProductsService: ProductsService,
-    private Router: Router
+    private Router: Router,
+    public DashboardService: DashboardService
   ) { }
   
   get attrs(): FormArray {
@@ -44,6 +52,9 @@ export class ProductEditComponent implements OnInit  {
 
   ngOnInit() {
     
+      this.display = true;
+      this.DashboardService.isMask = true;
+      
     this.product = this.route.snapshot.data['product'];
     
     this.productForm = this.fb.group({

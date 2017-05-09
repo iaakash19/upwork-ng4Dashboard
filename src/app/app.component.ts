@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute, NavigationStart, NavigationCancel, NavigationError } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-
+import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
@@ -14,15 +14,38 @@ import 'rxjs/add/operator/mergeMap';
 })
 export class AppComponent implements OnInit {
   title = 'app works!';
-  
+  loading: boolean;
+
   constructor(
       private router: Router,
       private activatedRoute: ActivatedRoute,
-      private titleService: Title
+      private titleService: Title,
+      private slimLoadingBarService: SlimLoadingBarService
   ) {
-    
+      
   }
+
+   startLoading() {
+        this.slimLoadingBarService.start(() => {
+            console.log('Loading complete');
+        });
+    }
+
+    stopLoading() {
+        this.slimLoadingBarService.stop();
+    }
+
+    completeLoading() {
+        this.slimLoadingBarService.complete();
+    }
+
+    
   ngOnInit() {
+    this.router.events
+          .subscribe(routerEvent => {
+            this.interceptRouterEvent(routerEvent);
+          });
+
     this.router.events
       .filter(event => event instanceof NavigationEnd)
       .map(() => this.activatedRoute)
@@ -33,5 +56,22 @@ export class AppComponent implements OnInit {
       .filter(route => route.outlet === 'primary')
       .mergeMap(route => route.data)
       .subscribe((event) => this.titleService.setTitle(event['title']));
+  }
+
+  interceptRouterEvent(routerEvent) {
+    debugger;
+       if (routerEvent instanceof NavigationStart) {
+            
+            this.startLoading();
+            debugger;
+        }
+
+        if (routerEvent instanceof NavigationEnd ||
+            routerEvent instanceof NavigationCancel ||
+            routerEvent instanceof NavigationError) {
+            this.loading = false;
+            // this.stopLoading();
+            // debugger;
+        }
   }
 }

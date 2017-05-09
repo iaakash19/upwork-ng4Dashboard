@@ -1,4 +1,8 @@
-<h3 class="page_header">Products</h3>
+<div class="headlineArea">
+<h3 class="page_header withoutband">Products</h3>
+<button class="save">Add</button>
+</div>
+
 <p-dataTable [value]="products" selectionMode="single" [responsive]="true"  (onRowSelect)="onRowSelect($event)">
     <p-column field="name" header="Name" [sortable]="true"></p-column>
     <p-column field="price" header="Price" [sortable]="true"></p-column>

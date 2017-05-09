@@ -1,74 +1,19 @@
-input {
-        padding: 0px 12px;
-    height: 28px;
-    font-size: 12px;
-    border-radius: 0px !important;
-    border: 1px solid #cfcfcf;
-    color: #37474f;
-    height: 30px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
+:host {
+    display: block;
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    margin-bottom: 1rem;
-    &.required { 
-        & label:after {
-            content: '*';
-            color: red;
-            
-        }
-    }
-    @media all and (min-width: 768px) {
-        margin-bottom: 0;
-        flex: 1 1 33%;
-        width: auto;
-        &:not(:nth-last-of-type(1)) {
-            margin-right: 1em;
-        }
-    }
     
-    &.inline-me {
-         flex-direction: row;
-         align-items: center;
-         margin-top: 20px;
-         label {
-            font-size: 16px
-         }
-    }
+    animation: test 1s 2s 1 forwards;
+    transform: translateY(-116vh);
+        z-index: 999;
+    background: white;
 }
 
 
 
-.form-group {
-    &.has-error {
-        input {
-            border-color: red;
-        }
-        label {
-            color: red;
-        }
-    }
-}
 
-label {
-        margin-bottom: 4px;
-    color: #37474f;
-    font-weight: bold;
-    font-size: 14px;
-}
 
-.inputWrapper {
-    display: flex;
-    flex-direction: column;
-    
-    margin-bottom: 1rem;
-      @media all and (min-width: 768px) {
-        flex-direction: row;
-        align-items: center;
-      }
-}
 
 .tabBox {
     margin: 1em 0;
@@ -102,9 +47,6 @@ label {
        justify-content: flex-end; 
     }
     & > button {
-    //     font-size: 1.05rem;
-    // padding: 0.5rem 1em;
-    // cursor: pointer;
         color: #333;
     background-color: #fcfcfc;
     border: 1px solid #ddd;
@@ -129,20 +71,7 @@ label {
 
 
 
-.errorMsgBox {
-    border: 1px solid #e0e0e0;
-    max-width: 300px;
-    font-size: 0.85rem;
-    padding: 0.5rem;
-    margin-bottom: 2rem;
-    
-    p {
-        margin: 0;
-        &:first-child{
-            margin-bottom: 1rem;
-        }
-    }
-}
+
 
 .action_buttons {
         flex: 0 0 50px;
