@@ -34,6 +34,10 @@
         {
           "label": "Label 4",
           "value": "Edited Value"
+        },
+        {
+          "label": "",
+          "value": ""
         }
       ],
       "desc": "And that commitment continues with the all-new 21.5-inch iMac with Retina 4K display. Like the revolutionary 27-inch 5K model"

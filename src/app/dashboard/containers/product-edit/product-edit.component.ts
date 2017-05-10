@@ -173,11 +173,11 @@ checkProductName() {
   }
 
   onFormSubmit(){
-    console.log(this.productForm.value);
     let productToUpdate = Object.assign({}, this.product, this.productForm.value);
     
     this.ProductsService.updateProduct(productToUpdate)
       .subscribe(item => {
+          this.DashboardService.isMask = false;
           this.Router.navigate(['/dashboard/products']);
       })
   }

@@ -71,6 +71,7 @@ export class AppComponent implements OnInit {
             routerEvent instanceof NavigationCancel ||
             routerEvent instanceof NavigationError) {
             this.loading = false;
+            //this.DashboardService.isMask = false;
             this.completeLoading();
             debugger;
             if(routerEvent.url === "/dashboard/products") {
@@ -78,6 +79,7 @@ export class AppComponent implements OnInit {
             }else {
                 this.DashboardService.showProductSearch = false;
             }
+
         }
   }
 }

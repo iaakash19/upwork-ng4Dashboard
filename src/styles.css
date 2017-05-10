@@ -428,9 +428,9 @@ tr > td:not(:first-child) .ui-cell-data {
       transition: top 0.3s ease;
   }
 
-.container {
+/*.container {
     overflow-y: hidden;
-}
+}*/
 
 .dash-mask {
         background: rgba(0,0,0,0.55);
@@ -693,3 +693,6 @@ position: absolute;
     height: 100%;
 }
 
+tr.ui-widget-content td:first-of-type span.ui-cell-data:hover {
+   text-decoration: underline;
+}

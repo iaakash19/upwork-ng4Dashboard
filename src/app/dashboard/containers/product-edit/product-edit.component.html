@@ -94,9 +94,41 @@
                 
 
             </p-tabPanel>
-    <p-tabPanel header="Linked Products">
-        Sample Content Goes HERE    
-    </p-tabPanel>
+            <p-tabPanel header="Image">
+                    <div class="imageWrapper">
+                        <img src="assets/noItem@2x.png" alt="">
+                        <div class="uploader" id="uniform-productImage"><input type="file" id="productImage" name="productImage" class="file-styled-primary" accept="image/*"><span class="filename" style="user-select: none;">No file selected</span><span class="action btn bg-blue" style="user-select: none;">Choose File</span></div>
+                    </div>
+            </p-tabPanel>
+
+       <p-tabPanel header="Linked">
+                
+                
+
+                <div class="label_header">
+                    <div>Label</div>
+                    <div>Value</div>
+                </div>
+                <div class="attrs_block" formArrayName="attrs" *ngFor="let attr of attrs.controls; let i = index; let last = last">
+                    
+                    <div class="form_group_wrapper" [formGroupName]="i" #inputRow>
+                        <div class="form_group">
+                            <p-dropdown [options]="labels" formControlName="label" [filter]="true"></p-dropdown>
+                        </div>
+                        <div class="form_group">
+                            <input type="text" formControlName="value">
+                        </div>
+                        <div class="action_buttons">
+                            <a (click)="removeAttrRow(i)"><i class="custom-icon delete-icon"></i></a>
+                            <div *ngIf="last"  (click)="addAttrRow(i)"><i class="custom-icon add-icon"></i></div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                
+
+            </p-tabPanel>
 </p-tabView>
     </section>
 
