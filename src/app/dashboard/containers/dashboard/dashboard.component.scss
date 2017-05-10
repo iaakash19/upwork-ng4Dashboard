@@ -1,3 +1,6 @@
+@import '../../../shared/styles/__vars';
+
+
 .dashboard-wrapper {
     display: flex;
     height: 100vh;
@@ -17,7 +20,7 @@ main {
 
 section.content {
         flex: 1 1 auto;
-    background: white;
+    background: $color-white;
      & .container {
          padding: 20px 10px;
      }
@@ -31,9 +34,9 @@ table {
 }
 
 tr {
-        border: 1px solid #d6d6d6;
-    background: #ffffff;
-    color: #555555;
+        border: 1px solid $tr-border;
+    background: $color-white;
+    color: $tr-color;
 }
 
 th {
@@ -47,7 +50,7 @@ th {
 }
 
 tbody {
-    border: 1px solid #D5D5D5;
-    background: #ffffff;
-    color: #222222;
+    border: 1px solid $tbody-border;
+    background: $tbody-background;
+    color: $tbody-color;
 }

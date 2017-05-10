@@ -3,10 +3,34 @@
 <button class="save">Add</button>
 </div>
 
-<p-dataTable [value]="products" selectionMode="single" [responsive]="true"  (onRowSelect)="onRowSelect($event)">
+<!--<p-dataTable [value]="products" selectionMode="single" [responsive]="true"  (onRowSelect)="onRowSelect($event)">
     <p-column field="name" header="Name" [sortable]="true"></p-column>
     <p-column field="price" header="Price" [sortable]="true"></p-column>
     <p-column field="tag" header="Tag" [sortable]="true"></p-column>
-</p-dataTable> 
+</p-dataTable> -->
 
+<p-dataTable  [value]="products" selectionMode="single" [responsive]="true"  (onRowSelect)="onRowSelect($event)">
+    <p-column field="name" header="Name" [sortable]="true" [editable]="false" [filter]="true" filterPlaceholder="Search">
+        <ng-template let-col let-data="rowData" pTemplate="body">
+        <span (click)="onRowSelect(data)" style="cursor:pointer; text-decoration:underline">
+        {{data.name}}
+        </span>
+        </ng-template>
+    </p-column>
 
+     <p-column field="price" header="Price" [sortable]="true" [editable]="false" [filter]="true" filterPlaceholder="Search">
+        <ng-template let-col let-data="rowData" pTemplate="body">
+        <span>{{data.price}}
+        </span>
+        </ng-template>
+    </p-column>
+
+     <p-column field="tag" header="Tag" [sortable]="true" [editable]="false" [filter]="true" filterPlaceholder="Search">
+        <ng-template let-col let-data="rowData" pTemplate="body">
+        <span>
+        {{data.tag}}
+        </span>
+        </ng-template>
+    </p-column>
+    SADASDASDAS
+<p-dataTable>

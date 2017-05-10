@@ -19,7 +19,7 @@
              position: relative;
             top: 0;
             left: auto;
-            background: #434343;
+            background: $bg-menu;
             z-index: 999;
             display: block;
         }
@@ -47,14 +47,14 @@ a {
 }
 
 nav > ul > li {
-border-top: 1px solid #3d3d3d;
-    border-bottom: 1px solid #525252;
+border-top: 1px solid $li-border-top;
+    border-bottom: 1px solid $li-border-bottom;
 }
     
 
 nav > ul > li > a {
     text-decoration: none;
-    color: #b4bfda;
+    color: $color-notif;
     display: flex;
     align-items: center;
     padding:0.90rem 1rem;
@@ -63,9 +63,9 @@ nav > ul > li > a {
     line-height: 1.5;
     &:hover {
         background-color: rgba(0, 0, 0, 0.1);
-    color: #fff;
+    color: $color-white;
     & i:before {
-        color: white;
+        color: $color-white;
     }
     }
 }
@@ -84,17 +84,17 @@ nav > ul > li > a {
 .logoWrapper {
     width: 100%;
     height: 50px;
-    border-bottom: 1px solid #434343;
+    border-bottom: 1px solid $bg-menu;
     display: flex;
     padding-left: 19px;
     align-items: center;
-    color: white;
+    color: $color-white;
 }
 
 .userBlock {
         width: 100%;
     // height: 75px;
-       border-bottom: 1px solid #434343;
+       border-bottom: 1px solid $bg-menu;
        min-height: 73px;
        @media all and (min-width: 768px) {
            margin-top: 10px;
@@ -122,7 +122,7 @@ nav > ul > li > a {
     position: absolute;
     top: 0;
     left: 56px;
-    background: #434343;
+    background: $bg-menu;
     z-index: 1000;
     display: none;
 }
@@ -166,7 +166,7 @@ a.active {
         }
     }
     .username {
-        color: white;
+        color: $color-white;
     }
 }
 
@@ -175,12 +175,12 @@ i {
 }
 
 li.nav_header {
-        background: #3c3c3c;
-    border-color: #3c3c3c;
+        background: $nav-header;
+    border-color: $nav-header;
     padding: 15px 20px;
     font-size: 13px;
     text-transform: capitalize;
-    color: white;
+    color: $color-white;
     min-height: 55px !important;
     display: flex;
     align-items: center;
@@ -194,7 +194,7 @@ ul.subnav {
         content: "";
     display: block;
     width: 1px;
-    background: #30343c;
+    background: $li-psudo-bg;
     height: 100%;
     position: absolute;
     left: 28px;
@@ -202,7 +202,7 @@ ul.subnav {
     li {
         padding-left: 30px;
         position: relative;
-        border-bottom: 1px solid #525252;
+        border-bottom: 1px solid $li-psudo-border;
         min-height: 40px;
         position: relative;
         &:not(.nav_header):before {
@@ -217,7 +217,7 @@ ul.subnav {
             border-radius: 100%;
         }
         &:not(.nav_header):after {
-             background: #878c96 none repeat scroll 0 0;
+             background: $nav-label none repeat scroll 0 0;
             border-radius: 100%;
             content: "";
             display: block;
@@ -230,7 +230,7 @@ ul.subnav {
         }
       
         a {
-            color: #b4bfda;
+            color: $color-icon;
             min-height: 40px;
             padding: 10px 20px;
             font-size: 13px;
@@ -259,7 +259,7 @@ ul.subnav {
    padding: 0;
    & a {
            display: flex;
-           color: white;
+           color: $color-white;
     width: 100%;
     height: 100%;
     min-height: 54px;
@@ -275,7 +275,7 @@ ul.second_level {
 position: relative;
     top: 0;
     left: auto;
-    background: #434343;
+    background: $bg-menu;
     z-index: 999;
 
         height: 0;
@@ -292,20 +292,20 @@ position: relative;
 
 li.subActive {
     .linkBlock {
-        color: white;
+        color: $color-white;
     }
     i {
         transform: rotate(90deg);
         transition: transform 0.3s ease;
         &:before {
-            color: white;
+            color: $color-white;
         }
     }
     &:after {
-        background: #008bf3 !important;
+        background: $color-blue;
     }
     &:before {
-        border-color: #2a81ac !important;
+        border-color: $before-before;
     }
 }
 

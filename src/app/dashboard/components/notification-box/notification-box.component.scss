@@ -1,7 +1,8 @@
+@import '../../../shared/styles/__vars';
 :host {
     position: absolute;
     width: 350px;
-    background: white;
+    background: $color-white;
     right: 0;
     top: 34px;
     z-index: 9999;
@@ -12,21 +13,21 @@
 
 
 .not-header {
-        background: #d7e2e9;
+        background: $bg-pageHeader;
     padding: 10px 20px;
-    color: #353535;
+    color: $grey-light;
 }
 
 .not_footer {
         background: #d7e2e9;
     padding: 10px 20px;
-    color: #353535;
+    color: $grey-light;
     text-align: center;
 }
 
 .noNotifs {
-    color: #999999;
-    font-size: 12px;
+    color: $notf;
+    font-size: $small-font;
     line-height: 1.6666667;
     font-weight: 400;
 }

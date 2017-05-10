@@ -44,10 +44,10 @@
     justify-content: center;
     top: -15px;
     left: 7px;
-    background-color: #FF7043;
-    border-color: #FF7043;
-    color: white;
-    font-size: 10px;
+    background-color: $count-bg;
+    border-color:$count-border;
+    color: $count-color;
+    font-size: $count-font;
     letter-spacing: 0.1px;
     border: 1px solid transparent;
     border-radius: 100px;
@@ -116,21 +116,21 @@
 
 .text {
     margin-left: 7px;
-    font-size: 13px;
-    color: #b4bfda;
+    font-size: $basic-font;
+    color: $color-notif;
 }
 
 .notif_count {
 padding: 2px 6px 1px 6px;
-    font-size: 10px;
+    font-size: $count-font;
     letter-spacing: 0.1px;
     vertical-align: baseline;
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 100px;
-    background-color: #fff;
-    border-color: #fff;
-    color: #333333;
+    background-color: $count-color;
+    border-color: $count-color;
+    color: $black-light;
     margin-left: 5px;
 }
 
@@ -166,7 +166,7 @@ notification-box {
 }
 
 .navbar-form .navbar-search {
-    background-color: #1b2328;
+    background-color: $bg-nav;
     border: 0;
     border-radius: 3px;
     input {
@@ -187,7 +187,7 @@ notification-box {
     & > button {
         background-color: transparent;
         border-radius: 0;
-        color: white;
+        color: $color-white;
         border: none;
             position: relative;
     top: 0;
@@ -197,17 +197,17 @@ notification-box {
 }
 
 .btn-nav-search {
- background: #008bf3 !important;
-    border-color: #008bf3 !important;
+ background: $color-blue !important;
+    border-color: $color-blue;
     padding: 5px 12px;
     font-size: 13px;
     text-transform: uppercase;
-    color: #fff;
+    color: $color-white;
 }
 
 .dropdown-content {
         position: absolute;
-    background: white;
+    background:$color-white;
     top: 36px;
     z-index: 9999;
     left: 0;
@@ -216,9 +216,9 @@ notification-box {
     width: 370px;
     label {
         margin-bottom: 4px;
-    color: #37474f;
+    color: $color-label;
     font-weight: bold;
-    font-size: 14px;
+    font-size: $drop-label;
     }
 }
 
@@ -239,7 +239,7 @@ notification-box {
 
 .navbar-search {
     & > input {
-        color: white
+        color: $color-white
     }
 }
 
@@ -251,10 +251,10 @@ notification-box {
     border: none;
     
     i {
-        font-size: 13px;
+        font-size: $basic-font;
         
         &:before {
-            color: #333333;
+            color: $black-light;
         }
     }
     input {
@@ -262,8 +262,8 @@ notification-box {
     height: 28px;
     font-size: 12px;
     border-radius: 0px !important;
-    border: 1px solid #cfcfcf;
-    color: #37474f;
+    border: 1px solid $border-light;
+    color: $color-label;
     width: 100%;
     }
 }
@@ -287,16 +287,16 @@ notification-box {
 }
 
 #adv-search-btn {
-    background-color: #2196F3;
-    border-color: #2196F3;
-    color: white;
+    background-color: $button-blue;
+    border-color: $button-blue;
+    color: $color-white;
     margin-right: 10px;
 }
 
 #adv-reset-btn {
            color: #333;
-    background-color: #fcfcfc;
-    border: 1px solid #ddd;
+    background-color: $reset-grey;
+    border: 1px solid $reset-border;
 }
 }
 
