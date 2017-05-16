@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   loginFailed: string;
 
   private validationMessages = {
-    required: 'This Field is Required',
+    required: 'is Required',
     minLength: 'Please Enter minimum characters'
   }
 
@@ -67,9 +67,9 @@ export class LoginComponent implements OnInit {
       if( (c.dirty || c.touched) && c.errors ) {
         Object.keys(c.errors).map(key => {
           if(type == 'username') {
-            this.usernameMessage = this.validationMessages[key];
+            this.usernameMessage = `Username is ${this.validationMessages[key]}`;
           }else {
-            this.passwordMessage = this.validationMessages[key];
+            this.passwordMessage = `Password is ${this.validationMessages[key]}`;
           }
         })
       }

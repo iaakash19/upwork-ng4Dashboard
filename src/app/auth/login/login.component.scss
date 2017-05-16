@@ -5,10 +5,17 @@
    align-items: center;
    justify-content: center;
     flex-direction: column;
+    position: relative;
 }
 
 .logoBox {
     margin: 2rem 0px;
+    position: absolute;
+    top: 75px;
+}
+
+.form-group:not(:nth-last-of-type(1)) {
+    margin-right: 0;
 }
 .loginBox {
  background: white;
@@ -92,6 +99,7 @@ h5 {
     margin-bottom: 29px;
     font-size: 25px;
     color: #484c5f;
+    font-weight: 400;
 }
 
 .help-block {

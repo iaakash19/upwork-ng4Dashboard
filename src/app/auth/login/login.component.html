@@ -2,9 +2,18 @@
 <div class="loginBox">
  
 <h5>Login to Your Account</h5>
+
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <div class="loginFailWrapper" *ngIf="loginFailed">
+  <div class="loginFailWrapper" *ngIf="loginFailed">  
       <p> {{loginFailed}} </p>
+  </div>
+  <div class="errorBox"> 
+    <div class="help-block" *ngIf="usernameMessage"> 
+        <p> {{ usernameMessage }} </p>
+      </div>
+      <div class="help-block" *ngIf="passwordMessage">
+        <p> {{ passwordMessage }} </p>
+      </div>
   </div>
   <div class="form-group"
   [ngClass]="{'has-error': usernameMessage}">
@@ -13,22 +22,16 @@
       type="text" id="username" 
       formControlName="username" 
       (blur)="checkUsername()">
-
-      <div class="help-block" *ngIf="usernameMessage"> 
-        <p> {{ usernameMessage }} </p>
-      </div>
   </div>
 
   <div class="form-group"
   [ngClass]="{'has-error': passwordMessage}">
     <label for="password">Password</label>
     <input type="password" id="password" formControlName="password" (blur)="checkPassword()">
-    <div class="help-block" *ngIf="passwordMessage">
-        <p> {{ passwordMessage }} </p>
-      </div>
+    
   </div>
-  <a [routerLink]="['/reset-password']">Forgot Your Password</a>
-  <button type="submit" [disabled]="!loginForm.valid">Signin</button>
+  <a [routerLink]="['/reset-password']">Forgot Your Password?</a>
+  <button type="submit" [disabled]="!loginForm.valid">Sign in</button>
 </form>
 </div>
 

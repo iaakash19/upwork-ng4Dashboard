@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    background: #000;
+    background: #24262b;
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
 }
@@ -696,3 +696,30 @@ position: absolute;
 tr.ui-widget-content td:first-of-type span.ui-cell-data:hover {
    text-decoration: underline;
 }
+
+/*.ui-widget-content */
+
+.ui-datepicker {
+    background: white;
+}
+
+.fa-angle-right:before, .fa-angle-left:before {
+    color: #333333;
+}
+
+.ui-datepicker-other-month.ui-state-disabled a {
+color: #cfcfcf;
+}
+
+.ui-datepicker td a {
+    text-align: center;
+}
+
+#adv-search-btn, #adv-reset-btn {
+    display: inline-flex;
+}
+
+#adv-search-btn span, #adv-reset-btn span {
+    margin-right: 5px;
+}
+
